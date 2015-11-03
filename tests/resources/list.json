@@ -1,0 +1,20 @@
+[
+    {
+        "id": "com.mojang.minecraftpe",
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.mojang.minecraftpe",
+        "title": "Minecraft: Pocket Edition",
+        "image": "https:\/\/lh3.googleusercontent.com\/30koN0eGl-LHqvUZrCj9HT4qVPQdvN508p2wuhaWUnqKeCp6nrs9QW8v6IVGvGNauA=w340",
+        "author": "Mojang",
+        "rating": 4.4724297523499,
+        "price": "$6.99"
+    },
+    {
+        "id": "com.robtopx.geometryjump",
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.robtopx.geometryjump",
+        "title": "Geometry Dash",
+        "image": "https:\/\/lh5.ggpht.com\/gSJ1oQ4a5pxvNHEktd21Gh36QbtZMMx5vqFZfe47VDs1fzCEeMCyThqOfg3DsTisYCo=w340",
+        "author": "RobTop Games",
+        "rating": 4.7444925308228,
+        "price": "$1.99"
+    }
+]
