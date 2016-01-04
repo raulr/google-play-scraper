@@ -73,7 +73,8 @@ class Scraper
             })
             ->each(function ($node) {
                 $href = $node->attr('href');
-                $collection = end(explode('/', $href));
+                $hrefParts = explode('/', $href);
+                $collection = end($hrefParts);
                 $collection = preg_replace('/\?.*$/', '', $collection);
 
                 return $collection;
