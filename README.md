@@ -1,6 +1,8 @@
 Google Play Scraper
 ===================
 
+[![Build Status](https://travis-ci.org/raulr/google-play-scraper.svg?branch=master)](https://travis-ci.org/raulr/google-play-scraper)
+
 A PHP scraper to get app data from Google Play.
 
 Installation
