@@ -2,7 +2,6 @@
 
 namespace Raulr\GooglePlayScraper;
 
-use Goutte\Client;
 use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 use Symfony\Component\DomCrawler\Crawler;
 use Raulr\GooglePlayScraper\Exception\RequestException;

@@ -115,6 +115,22 @@ class ScraperTest extends \PHPUnit_Framework_TestCase
         $app = $scraper->getApp('non.existing.app');
     }
 
+    public function testGetAppWithNullByte()
+    {
+        $transactions = array();
+        $history = Middleware::history($transactions);
+        $mock = new MockHandler(array(
+            new Response(200, array('content-type' => 'text/html; charset=utf-8'), file_get_contents(__DIR__.'/resources/app3.html')),
+        ));
+        $handler = HandlerStack::create($mock);
+        $handler->push($history);
+        $scraper = $this->getScraper($handler);
+        $app = $scraper->getApp('org.zooper.zwpro', 'de', 'de');
+        $expected = json_decode(file_get_contents(__DIR__.'/resources/app3.json'), true);
+        $this->assertEquals($expected, $app);
+        $this->assertEquals('https://play.google.com/store/apps/details?id=org.zooper.zwpro&hl=de&gl=de', $transactions[0]['request']->getUri());
+    }
+
     public function testGetApps()
     {
         $scraper = $this->getScraper();
