@@ -8,7 +8,6 @@
     "require": {
         "fabpot/goutte": "^3.0"
     },
-    "license": "MIT",
     "authors": [
         {
             "name": "Raul Rodriguez",
