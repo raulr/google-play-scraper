@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Unreleased
+## 0.1.1 (2016-04-09)
 
 ### Fixed
 
