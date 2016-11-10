@@ -259,4 +259,65 @@ class ScraperTest extends \PHPUnit_Framework_TestCase
         $apps = $scraper->getDetailList('topselling_paid', 'GAME_ARCADE', 'en', 'us');
         $this->assertEquals($expected, $apps);
     }
+
+    public function testGetSearch()
+    {
+        $transactions = array();
+        $history = Middleware::history($transactions);
+        $mock = new MockHandler(array(
+            new Response(200, array('content-type' => 'text/html; charset=utf-8'), file_get_contents(__DIR__.'/resources/search1.html')),
+            new Response(200, array('content-type' => 'text/html; charset=utf-8'), file_get_contents(__DIR__.'/resources/search2.html')),
+        ));
+        $handler = HandlerStack::create($mock);
+        $handler->push($history);
+        $scraper = $this->getScraper($handler);
+        $search = $scraper->getSearch('unicorns', 'free', '4+', 'en', 'us');
+        $expected = json_decode(file_get_contents(__DIR__.'/resources/search.json'), true);
+        $this->assertEquals($expected, $search);
+        $this->assertEquals('https://play.google.com/store/search?q=unicorns&c=apps&hl=en&gl=us&price=1&rating=1', $transactions[0]['request']->getUri());
+        $this->assertEquals('https://play.google.com/store/search?q=unicorns&c=apps&hl=en&gl=us&price=1&rating=1&pagTok=GAEiAggU%3AS%3AANO1ljLtUJw', $transactions[1]['request']->getUri());
+    }
+
+    public function testGetSearchQueryNotString()
+    {
+        $scraper = $this->getScraper();
+        $this->setExpectedException('InvalidArgumentException');
+        $scraper->getSearch(1.23);
+    }
+
+    public function testGetSearchPriceInvalid()
+    {
+        $scraper = $this->getScraper();
+        $this->setExpectedException('InvalidArgumentException');
+        $scraper->getSearch('unicorns', 0);
+    }
+
+    public function testGetSearchRatingInvalid()
+    {
+        $scraper = $this->getScraper();
+        $this->setExpectedException('InvalidArgumentException');
+        $scraper->getSearch('unicorns', 'all', 0);
+    }
+
+    public function testGetDetailSearch()
+    {
+        $expected = array(
+            'app1_id' => array('app1_data'),
+            'app2_id' => array('app2_data'),
+        );
+        $scraper = $this->getScraper();
+        $scraper
+            ->shouldReceive('getSearch')
+            ->with('unicorns', 'free', '4+', 'en', 'us')
+            ->once()
+            ->andReturn(array(array('id' => 'app1_id'), array('id' => 'app2_id')));
+        $scraper
+            ->shouldReceive('getApps')
+            ->with(array('app1_id', 'app2_id'))
+            ->once()
+            ->andReturn($expected);
+
+        $apps = $scraper->getDetailSearch('unicorns', 'free', '4+', 'en', 'us');
+        $this->assertEquals($expected, $apps);
+    }
 }

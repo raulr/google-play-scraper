@@ -60,7 +60,7 @@ class Scraper
 
     public function getCategories()
     {
-        $crawler = $this->request('', array(
+        $crawler = $this->request('apps', array(
             'hl' => 'en',
             'gl' => 'us',
         ));
@@ -105,7 +105,7 @@ class Scraper
             'hl' => $lang,
             'gl' => $country,
         );
-        $crawler = $this->request('details', $params);
+        $crawler = $this->request(array('apps', 'details'), $params);
 
         $info = array();
         $info['id'] = $id;
@@ -213,7 +213,7 @@ class Scraper
             throw new \RangeException('"num" must be a number between 0 and 120');
         }
 
-        $path = array();
+        $path = array('apps');
         if ($category) {
             array_push($path, 'category', $category);
         }
@@ -226,36 +226,7 @@ class Scraper
         );
         $crawler = $this->request($path, $params);
 
-        $apps = $crawler->filter('.card')->each(function ($node) {
-            $app = array();
-            $app['id'] = $node->attr('data-docid');
-            $app['url'] = self::BASE_URL.$node->filter('a')->attr('href');
-            $app['title'] = $node->filter('a.title')->attr('title');
-            $app['image'] = $node->filter('img.cover-image')->attr('data-cover-large');
-            $app['author'] = $node->filter('a.subtitle')->attr('title');
-            $ratingNode = $node->filter('.current-rating');
-            if (!$ratingNode->count()) {
-                $rating = 0.0;
-            } elseif (preg_match('/\d+(\.\d+)?/', $node->filter('.current-rating')->attr('style'), $matches)) {
-                $rating = floatval($matches[0]) * 0.05;
-            } else {
-                throw new \RuntimeException('Error parsing rating');
-            }
-            $app['rating'] = $rating;
-            $priceNode = $node->filter('.display-price');
-            if (!$priceNode->count()) {
-                $price = null;
-            } elseif (!preg_match('/\d/', $priceNode->text())) {
-                $price = null;
-            } else {
-                $price = $priceNode->text();
-            }
-            $app['price'] = $price;
-
-            return $app;
-        });
-
-        return $apps;
+        return $this->parseAppList($crawler);
     }
 
     public function getList($collection, $category = null, $lang = null, $country = null)
@@ -296,6 +267,76 @@ class Scraper
         return $this->getApps($ids);
     }
 
+    public function getSearch($query, $price = 'all', $rating = 'all', $lang = null, $country = null)
+    {
+        $lang = $lang === null ? $this->lang : $lang;
+        $country = $country === null ? $this->country : $country;
+        $priceValues = array(
+            'all' => null,
+            'free' => 1,
+            'paid' => 2,
+        );
+        $ratingValues = array(
+            'all' => null,
+            '4+' => 1,
+        );
+
+        if (!is_string($query) || empty($query)) {
+            throw new \InvalidArgumentException('"query" must be a non empty string');
+        }
+
+        if (array_key_exists($price, $priceValues)) {
+            $price = $priceValues[$price];
+        } else {
+            throw new \InvalidArgumentException('"price" must contain one of the following values: '.implode(', ', array_keys($priceValues)));
+        }
+
+        if (array_key_exists($rating, $ratingValues)) {
+            $rating = $ratingValues[$rating];
+        } else {
+            throw new \InvalidArgumentException('"rating" must contain one of the following values: '.implode(', ', array_keys($ratingValues)));
+        }
+
+        $apps = array();
+        $path = array('search');
+        $params = array(
+            'q' => $query,
+            'c' => 'apps',
+            'hl' => $lang,
+            'gl' => $country,
+        );
+        if ($price) {
+            $params['price'] = $price;
+        }
+        if ($rating) {
+            $params['rating'] = $rating;
+        }
+
+        do {
+            $crawler = $this->request($path, $params);
+            $apps = array_merge($apps, $this->parseAppList($crawler));
+            unset($params['pagTok']);
+            foreach ($crawler->filter('script') as $scriptNode) {
+                if (preg_match('/\\\x22(GAE.+?)\\\x22/', $scriptNode->textContent, $matches)) {
+                    $params['pagTok'] = preg_replace('/\\\\\\\u003d/', '=', $matches[1]);
+                    break;
+                }
+            }
+        } while (array_key_exists('pagTok', $params));
+
+        return $apps;
+    }
+
+    public function getDetailSearch($query, $price = 'all', $rating = 'all', $lang = null, $country = null)
+    {
+        $apps = $this->getSearch($query, $price, $rating, $lang, $country);
+        $ids = array_map(function ($app) {
+            return $app['id'];
+        }, $apps);
+
+        return $this->getApps($ids);
+    }
+
     protected function request($path, array $params = array())
     {
         // handle delay
@@ -311,7 +352,7 @@ class Scraper
             $path = implode('/', $path);
         }
         $path = ltrim($path, '/');
-        $path = rtrim('/store/apps/'.$path, '/');
+        $path = rtrim('/store/'.$path, '/');
         $url = self::BASE_URL.$path;
         $query = http_build_query($params);
         if ($query) {
@@ -348,6 +389,38 @@ class Scraper
         }
 
         return $absoluteUrl;
+    }
+
+    protected function parseAppList(Crawler $crawler)
+    {
+        return $crawler->filter('.card')->each(function ($node) {
+            $app = array();
+            $app['id'] = $node->attr('data-docid');
+            $app['url'] = self::BASE_URL.$node->filter('a')->attr('href');
+            $app['title'] = $node->filter('a.title')->attr('title');
+            $app['image'] = $node->filter('img.cover-image')->attr('data-cover-large');
+            $app['author'] = $node->filter('a.subtitle')->attr('title');
+            $ratingNode = $node->filter('.current-rating');
+            if (!$ratingNode->count()) {
+                $rating = 0.0;
+            } elseif (preg_match('/\d+(\.\d+)?/', $node->filter('.current-rating')->attr('style'), $matches)) {
+                $rating = floatval($matches[0]) * 0.05;
+            } else {
+                throw new \RuntimeException('Error parsing rating');
+            }
+            $app['rating'] = $rating;
+            $priceNode = $node->filter('.display-price');
+            if (!$priceNode->count()) {
+                $price = null;
+            } elseif (!preg_match('/\d/', $priceNode->text())) {
+                $price = null;
+            } else {
+                $price = $priceNode->text();
+            }
+            $app['price'] = $price;
+
+            return $app;
+        });
     }
 
     protected function cleanDescription(Crawler $descriptionNode)

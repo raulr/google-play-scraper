@@ -265,3 +265,24 @@ $apps = $scraper->getListChunk('topselling_free', 'SOCIAL', 20, 80);
 
 Same as [getListChunk](#getlistchunk) but returning full detail app data. An additional request is made for every app from the list in order to get its details.
 
+### getSearch
+
+Retrieves a list of Google Play apps given a search query and optionally filtered by price and rating.
+
+#### Parameters
+
+* `$query`: Search query.
+* `$price`: (optional, defaults to `all`) Filter request by price. Possible values: `all`, `free`, `paid`.
+* `$rating`: (optional, defaults to `all`) Filter request by rating. Possible values: `all`, `4+`.
+* `$lang`: (optional, defaults to `null`): Overrides the default language.
+* `$country`: (optional, defaults to `null`): Overrides the default country.
+
+#### Example
+
+```php
+$apps = $scraper->getSearch('unicorns', 'free', '4+');
+```
+
+### getDetailSearch
+
+Same as [getSearch](#getsearch) but returning full detail app data. An additional request is made for every app from the search result in order to get its details.

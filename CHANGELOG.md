@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Unreleased
+
+### Added
+
+* `getSearch` and `getDetailSearch` methods.
+
 ## 0.1.1 (2016-04-09)
 
 ### Fixed
