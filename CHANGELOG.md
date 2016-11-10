@@ -6,6 +6,10 @@
 
 * `getSearch` and `getDetailSearch` methods.
 
+### Changed
+
+* Convert schemaless URLs into absolute URLs.
+
 ## 0.1.1 (2016-04-09)
 
 ### Fixed

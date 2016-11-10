@@ -110,7 +110,7 @@ class Scraper
         $info = array();
         $info['id'] = $id;
         $info['url'] = $crawler->filter('[itemprop="url"]')->attr('content');
-        $info['image'] = $crawler->filter('[itemprop="image"]')->attr('src');
+        $info['image'] = $this->getAbsoluteUrl($crawler->filter('[itemprop="image"]')->attr('src'));
         $info['title'] = $crawler->filter('[itemprop="name"] > div')->text();
         $info['author'] = $crawler->filter('[itemprop="author"] [itemprop="name"]')->text();
         $info['author_link'] = $this->getAbsoluteUrl($crawler->filter('[itemprop="author"] > [itemprop="url"]')->attr('content'));
@@ -120,7 +120,7 @@ class Scraper
         $price = $crawler->filter('[itemprop="offers"] > [itemprop="price"]')->attr('content');
         $info['price'] = $price == '0' ? null : $price;
         $info['screenshots'] = $crawler->filter('[itemprop="screenshot"]')->each(function ($node) {
-            return $node->filter('img')->attr('src');
+            return $this->getAbsoluteUrl($node->filter('img')->attr('src'));
         });
         $desc = $this->cleanDescription($crawler->filter('[itemprop="description"] > div'));
         $info['description'] = $desc['text'];
@@ -173,7 +173,7 @@ class Scraper
         }
         $videoNode = $crawler->filter('.details-trailer');
         if ($videoNode->count()) {
-            $info['video_link'] = $videoNode->filter('.play-action-container')->attr('data-video-url');
+            $info['video_link'] = $this->getAbsoluteUrl($videoNode->filter('.play-action-container')->attr('data-video-url'));
             $info['video_image'] = $this->getAbsoluteUrl($videoNode->filter('.video-image')->attr('src'));
         } else {
             $info['video_link'] = null;
@@ -398,7 +398,7 @@ class Scraper
             $app['id'] = $node->attr('data-docid');
             $app['url'] = self::BASE_URL.$node->filter('a')->attr('href');
             $app['title'] = $node->filter('a.title')->attr('title');
-            $app['image'] = $node->filter('img.cover-image')->attr('data-cover-large');
+            $app['image'] = $this->getAbsoluteUrl($node->filter('img.cover-image')->attr('data-cover-large'));
             $app['author'] = $node->filter('a.subtitle')->attr('title');
             $ratingNode = $node->filter('.current-rating');
             if (!$ratingNode->count()) {
