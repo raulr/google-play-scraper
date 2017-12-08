@@ -317,9 +317,10 @@ class Scraper
         $crawler = $this->request($path, $params);
         $apps = array_merge($apps, $this->parseAppList($crawler));
         unset($params['pagTok']);
-        
+        $params=[];
         preg_match('/(search_results_cluster_apps\?clp=)(((.?)*)("))/U', $crawler->html(), $matches);
-        $params['clp'] = $matches[3];
+        $params['clp'] = str_replace("%3D", "=", $matches[3]);
+       
         
         preg_match('/(var nbp=)(((.?)*)(]))/U', $crawler->html(), $matches);
         if (isset($matches[2])) {
