@@ -267,7 +267,7 @@ class Scraper
         return $this->getApps($ids);
     }
 
-    public function getSearch($query, $price = 'all', $rating = 'all', $lang = null, $country = null)
+     public function getSearch($query, $price = 'all', $rating = 'all', $lang = null, $country = null)
     {
         $lang = $lang === null ? $this->lang : $lang;
         $country = $country === null ? $this->country : $country;
@@ -280,23 +280,25 @@ class Scraper
             'all' => null,
             '4+' => 1,
         );
-
+        
         if (!is_string($query) || empty($query)) {
             throw new \InvalidArgumentException('"query" must be a non empty string');
         }
-
+        
         if (array_key_exists($price, $priceValues)) {
             $price = $priceValues[$price];
         } else {
-            throw new \InvalidArgumentException('"price" must contain one of the following values: '.implode(', ', array_keys($priceValues)));
+            throw new \InvalidArgumentException('"price" must contain one of the following values: ' . implode(', ',
+                    array_keys($priceValues)));
         }
-
+        
         if (array_key_exists($rating, $ratingValues)) {
             $rating = $ratingValues[$rating];
         } else {
-            throw new \InvalidArgumentException('"rating" must contain one of the following values: '.implode(', ', array_keys($ratingValues)));
+            throw new \InvalidArgumentException('"rating" must contain one of the following values: ' . implode(', ',
+                    array_keys($ratingValues)));
         }
-
+        
         $apps = array();
         $path = array('search');
         $params = array(
@@ -311,20 +313,111 @@ class Scraper
         if ($rating) {
             $params['rating'] = $rating;
         }
-
-        do {
-            $crawler = $this->request($path, $params);
-            $apps = array_merge($apps, $this->parseAppList($crawler));
-            unset($params['pagTok']);
-            foreach ($crawler->filter('script') as $scriptNode) {
-                if (preg_match('/\\\x22(GAE.+?)\\\x22/', $scriptNode->textContent, $matches)) {
-                    $params['pagTok'] = preg_replace('/\\\\\\\u003d/', '=', $matches[1]);
-                    break;
+        
+        $crawler = $this->request($path, $params);
+        $apps = array_merge($apps, $this->parseAppList($crawler));
+        unset($params['pagTok']);
+        
+        preg_match('/(search_results_cluster_apps\?clp=)(((.?)*)("))/U', $crawler->html(), $matches);
+        $params['clp'] = $matches[3];
+        
+        preg_match('/(var nbp=)(((.?)*)(]))/U', $crawler->html(), $matches);
+        if (isset($matches[2])) {
+            $result = explode("\\x22", $matches[2]);
+            $resultToken = str_replace("\\\\u003d", "=", $result[3]);
+            if (!empty($resultToken)) {
+                $params['pagTok'] = $resultToken;
+                $params['start'] = 0;
+                $params['num'] = 0;
+                $paging = $this->searchPaging($params, $lang, $country);
+                if (!empty($paging)) {
+                    $apps = array_merge($apps, $paging);
                 }
             }
-        } while (array_key_exists('pagTok', $params));
-
+        }
+        
         return $apps;
+    }
+    
+    public function searchPaging($params, $lang = 'en', $country = 'us')
+    {
+        $params['pagtt'] = 3;
+        $params['numChildren'] = 0;
+        $params['cctcss'] = 'square-cover';
+        $params['cllayout'] = 'NORMAL';
+        $params['ipf'] = 1;
+        $params['xhr'] = 1;
+        if ($this->countNum >= 280) {
+            return [];
+        } else {
+            $apps = array();
+            
+            $crawler = $this->requestPost([
+                'apps',
+                'collection',
+                'search_results_cluster_apps?authuser=0&hl=' . $lang . '&gl=' . $country
+            ], $params);
+            $apps = array_merge($apps, $this->parseAppList($crawler));
+            unset($params['pagTok']);
+            preg_match('/(var nbp=)(((.?)*)(]))/U', $crawler->html(), $matches);
+            
+            if (!isset($matches[2])) {
+                return [];
+            } else {
+                $result = explode("\\x22", $matches[2]);
+                $resultToken = str_replace("\\\\u003d", "=", $result[3]);
+                if (!empty($resultToken)) {
+                    $params['pagTok'] = $resultToken;
+                    $params['start'] = $this->countNum;
+                    $params['num'] = 96;
+                    $this->countNum += 96;
+                    $paging = $this->searchPaging($params);
+                    if (!empty($paging)) {
+                        $apps = array_merge($apps, $paging);
+                    }
+                } else {
+                    return [];
+                }
+            }
+            
+            return $apps;
+        }
+    }
+    
+    protected function requestPost($path, array $params = array())
+    {
+        try {
+            // handle delay
+            if (!empty($this->delay) && !empty($this->lastRequestTime)) {
+                $currentTime = microtime(true);
+                $delaySecs = $this->delay / 1000;
+                $delay = max(0, $delaySecs - $currentTime + $this->lastRequestTime);
+                usleep($delay * 1000000);
+            }
+            $this->lastRequestTime = microtime(true);
+            
+            if (is_array($path)) {
+                $path = implode('/', $path);
+            }
+            $path = ltrim($path, '/');
+            $path = rtrim('/store/' . $path, '/');
+            $url = self::BASE_URL . $path;
+            //        $query = http_build_query($params);
+            //        if ($query) {
+            //            $url .= '?' . $query;
+            //        }
+            $crawler = $this->client->request('POST', $url, $params);
+            $status_code = $this->client->getResponse()->getStatus();
+            if ($status_code == 404) {
+                throw new NotFoundException('Requested resource not found');
+            } elseif ($status_code != 200) {
+                throw new Exception(sprintf('Request failed with "%d" status code', $status_code), $status_code);
+            }
+            
+            return $crawler;
+        } catch (\Exception $e) {
+            return [];
+        }
     }
 
     public function getDetailSearch($query, $price = 'all', $rating = 'all', $lang = null, $country = null)
