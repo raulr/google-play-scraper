@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 0.2.2 (2018-03-30)
+
+### Fixed
+ - Crawl application description
+
+## 0.2.1 (2018-03-30)
+
+### Fixed
+ - Remove no longer supported fields due to google play html structure change
+
 ## 0.2.0 (2016-11-10)
 
 ### Added
