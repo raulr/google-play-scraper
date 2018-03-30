@@ -111,9 +111,10 @@ class Scraper
         $info['id'] = $id;
         $info['url'] = $crawler->filter('[itemprop="url"]')->attr('content');
         $info['image'] = $this->getAbsoluteUrl($crawler->filter('[itemprop="image"]')->attr('src'));
-        $info['title'] = $crawler->filter('[itemprop="name"] > div')->text();
-        $info['author'] = $crawler->filter('[itemprop="author"] [itemprop="name"]')->text();
-        $info['author_link'] = $this->getAbsoluteUrl($crawler->filter('[itemprop="author"] > [itemprop="url"]')->attr('content'));
+        $info['title'] = $crawler->filter('[itemprop="name"] > span')->text();
+        // author no longer supported
+        //$info['author'] = $crawler->filter('[itemprop="author"] [itemprop="name"]')->text();
+        //$info['author_link'] = $this->getAbsoluteUrl($crawler->filter('[itemprop="author"] > [itemprop="url"]')->attr('content'));
         $info['categories'] = $crawler->filter('[itemprop="genre"]')->each(function ($node) {
             return $node->text();
         });
@@ -139,7 +140,8 @@ class Scraper
             $votes = 0;
         }
         $info['votes'] = $votes;
-        $info['last_updated'] = trim($crawler->filter('[itemprop="datePublished"]')->text());
+        // no longer supported
+        //$info['last_updated'] = trim($crawler->filter('[itemprop="datePublished"]')->text());
         $sizeNode = $crawler->filter('[itemprop="fileSize"]');
         if ($sizeNode->count()) {
             $size = trim($sizeNode->text());
@@ -161,7 +163,8 @@ class Scraper
             $version = null;
         }
         $info['version'] = $version;
-        $info['supported_os'] = trim($crawler->filter('[itemprop="operatingSystems"]')->text());
+        // no longer supported
+        /*$info['supported_os'] = trim($crawler->filter('[itemprop="operatingSystems"]')->text());
         $info['content_rating'] = $crawler->filter('[itemprop="contentRating"]')->text();
         $whatsneNode = $crawler->filter('.recent-change');
         if ($whatsneNode->count()) {
@@ -178,7 +181,7 @@ class Scraper
         } else {
             $info['video_link'] = null;
             $info['video_image'] = null;
-        }
+        }*/
 
         return $info;
     }
