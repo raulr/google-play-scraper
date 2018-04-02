@@ -109,20 +109,26 @@ class Scraper
 
         $info = array();
         $info['id'] = $id;
-        $info['url'] = $crawler->filter('[itemprop="url"]')->attr('content');
+        $info['url'] = $crawler->filter('link[rel="canonical"]')->eq(1)->attr('href');
         $info['image'] = $this->getAbsoluteUrl($crawler->filter('[itemprop="image"]')->attr('src'));
-        $info['title'] = $crawler->filter('[itemprop="name"] > div')->text();
-        $info['author'] = $crawler->filter('[itemprop="author"] [itemprop="name"]')->text();
-        $info['author_link'] = $this->getAbsoluteUrl($crawler->filter('[itemprop="author"] > [itemprop="url"]')->attr('content'));
+        $info['title'] = $crawler->filter('[itemprop="name"] > span')->text();
+        $authorNode = $crawler->filter('a.hrTbp.R8zArc')->first();
+        $info['author'] = $authorNode->text();
+        $info['author_link'] = $this->getAbsoluteUrl($authorNode->attr('href'));
         $info['categories'] = $crawler->filter('[itemprop="genre"]')->each(function ($node) {
             return $node->text();
         });
-        $price = $crawler->filter('[itemprop="offers"] > [itemprop="price"]')->attr('content');
+        $priceNode = $crawler->filter('[itemprop="offers"] > [itemprop="price"]');
+        if ($priceNode->count()) {
+            $price = $priceNode->attr('content');
+        } else {
+            $price = null;
+        }
         $info['price'] = $price == '0' ? null : $price;
-        $info['screenshots'] = $crawler->filter('[itemprop="screenshot"]')->each(function ($node) {
+        $info['screenshots'] = $crawler->filter('[data-screenshot-item-index]')->each(function ($node) {
             return $this->getAbsoluteUrl($node->filter('img')->attr('src'));
         });
-        $desc = $this->cleanDescription($crawler->filter('[itemprop="description"] > div'));
+        $desc = $this->cleanDescription($crawler->filter('[itemprop="description"] > content > div'));
         $info['description'] = $desc['text'];
         $info['description_html'] = $desc['html'];
         $ratingNode = $crawler->filter('[itemprop="aggregateRating"] > [itemprop="ratingValue"]');
@@ -139,42 +145,59 @@ class Scraper
             $votes = 0;
         }
         $info['votes'] = $votes;
-        $info['last_updated'] = trim($crawler->filter('[itemprop="datePublished"]')->text());
-        $sizeNode = $crawler->filter('[itemprop="fileSize"]');
+        $extraInfoNodes = $crawler->filter('.htlgb');
+        $lastUpdatedNode = $extraInfoNodes->eq(0);
+        if ($lastUpdatedNode->count()) {
+            $info['last_updated'] = trim($lastUpdatedNode->text());
+        } else {
+            $info['last_updated'] = null;
+        }
+        $sizeNode = $extraInfoNodes->eq(1);
         if ($sizeNode->count()) {
             $size = trim($sizeNode->text());
         } else {
             $size = null;
         }
         $info['size'] = $size;
-        $downloadsNode = $crawler->filter('[itemprop="numDownloads"]');
+        $downloadsNode = $extraInfoNodes->eq(2);
         if ($downloadsNode->count()) {
             $downloads = trim($downloadsNode->text());
         } else {
             $downloads = null;
         }
         $info['downloads'] = $downloads;
-        $versionNode = $crawler->filter('[itemprop="softwareVersion"]');
+        $versionNode = $extraInfoNodes->eq(3);
         if ($versionNode->count()) {
             $version = trim($versionNode->text());
         } else {
             $version = null;
         }
         $info['version'] = $version;
-        $info['supported_os'] = trim($crawler->filter('[itemprop="operatingSystems"]')->text());
-        $info['content_rating'] = $crawler->filter('[itemprop="contentRating"]')->text();
-        $whatsneNode = $crawler->filter('.recent-change');
+        $supportedOSNode = $extraInfoNodes->eq(4);
+        if ($supportedOSNode->count()) {
+            $supportedOS = trim($supportedOSNode->text());
+        } else {
+            $supportedOS = null;
+        }
+        $info['supported_os'] = $supportedOS;
+        $contentRatingNode = $extraInfoNodes->eq(5);
+        if ($contentRatingNode->count()) {
+            $contentRating = trim($contentRatingNode->children()->first()->text());
+        } else {
+            $contentRating = null;
+        }
+        $info['content_rating'] = $contentRating;
+        $whatsneNode = $crawler->filter('[itemprop="description"] > content')->eq(1);
         if ($whatsneNode->count()) {
-            $info['whatsnew'] = implode("\n", $whatsneNode->each(function ($node) {
-                return $node->text();
-            }));
+            $whatsnew = $this->cleanDescription($whatsneNode);
+            $info['whatsnew'] = $whatsnew['text'];
         } else {
             $info['whatsnew'] = null;
         }
-        $videoNode = $crawler->filter('.details-trailer');
+        $videoNode = $crawler->filter('.MSLVtf.NIc6yf');
         if ($videoNode->count()) {
-            $info['video_link'] = $this->getAbsoluteUrl($videoNode->filter('.play-action-container')->attr('data-video-url'));
-            $info['video_image'] = $this->getAbsoluteUrl($videoNode->filter('.video-image')->attr('src'));
+            $info['video_link'] = $this->getAbsoluteUrl($videoNode->filter('[data-trailer-url]')->attr('data-trailer-url'));
+            $info['video_image'] = $this->getAbsoluteUrl($videoNode->filter('img')->attr('src'));
         } else {
             $info['video_link'] = null;
             $info['video_image'] = null;
