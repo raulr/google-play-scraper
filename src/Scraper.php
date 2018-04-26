@@ -107,100 +107,89 @@ class Scraper
         );
         $crawler = $this->request(array('apps', 'details'), $params);
 
-        $info = array();
+        $info = array(
+            'id' => null,
+            'url' => null,
+            'image' => null,
+            'title' => null,
+            'author' => null,
+            'author_link' => null,
+            'categories' => array(),
+            'price' => null,
+            'screenshots' => array(),
+            'description' => null,
+            'description_html' => null,
+            'rating' => 0.0,
+            'votes' => 0,
+            'last_updated' => null,
+            'size' => null,
+            'downloads' => null,
+            'version' => null,
+            'supported_os' => null,
+            'content_rating' => null,
+            'whatsnew' => null,
+            'video_link' => null,
+            'video_image' => null
+        );
+
         $info['id'] = $id;
-        $info['url'] = $crawler->filter('link[rel="canonical"]')->eq(1)->attr('href');
+        $info['url'] = $crawler->filter('link[rel="alternate"]')->first()->attr('href');
         $info['image'] = $this->getAbsoluteUrl($crawler->filter('[itemprop="image"]')->attr('src'));
         $info['title'] = $crawler->filter('[itemprop="name"] > span')->text();
         $authorNode = $crawler->filter('a.hrTbp.R8zArc')->first();
-        $info['author'] = $authorNode->text();
-        $info['author_link'] = $this->getAbsoluteUrl($authorNode->attr('href'));
+        if ($authorNode->count()) {
+            $info['author'] = $authorNode->text();
+            $info['author_link'] = $this->getAbsoluteUrl($authorNode->attr('href'));
+        }
         $info['categories'] = $crawler->filter('[itemprop="genre"]')->each(function ($node) {
             return $node->text();
         });
         $priceNode = $crawler->filter('[itemprop="offers"] > [itemprop="price"]');
         if ($priceNode->count()) {
             $price = $priceNode->attr('content');
-        } else {
-            $price = null;
+            $info['price'] = $price == '0' ? null : $price;
         }
-        $info['price'] = $price == '0' ? null : $price;
         $info['screenshots'] = $crawler->filter('[data-screenshot-item-index]')->each(function ($node) {
             return $this->getAbsoluteUrl($node->filter('img')->attr('src'));
         });
         $desc = $this->cleanDescription($crawler->filter('[itemprop="description"] > content > div'));
         $info['description'] = $desc['text'];
         $info['description_html'] = $desc['html'];
-        $ratingNode = $crawler->filter('[itemprop="aggregateRating"] > [itemprop="ratingValue"]');
+        $ratingNode = $crawler->filter('.BHMmbe');
         if ($ratingNode->count()) {
-            $rating = floatval($ratingNode->attr('content'));
-        } else {
-            $rating = 0.0;
+            $info['rating'] = floatval(str_replace(',', '.', $ratingNode->text()));
         }
-        $info['rating'] = $rating;
-        $votesNode = $crawler->filter('[itemprop="aggregateRating"] > [itemprop="ratingCount"]');
+        $votesNode = $crawler->filter('.EymY4b > span[aria-label]');
         if ($votesNode->count()) {
-            $votes = intval($votesNode->attr('content'));
-        } else {
-            $votes = 0;
+            $info['votes'] = intval(str_replace(array(',', '.', ' '), '', $votesNode->text()));
         }
-        $info['votes'] = $votes;
-        $extraInfoNodes = $crawler->filter('.htlgb');
-        $lastUpdatedNode = $extraInfoNodes->eq(0);
-        if ($lastUpdatedNode->count()) {
-            $info['last_updated'] = trim($lastUpdatedNode->text());
-        } else {
-            $info['last_updated'] = null;
-        }
-        $sizeNode = $extraInfoNodes->eq(1);
-        if ($sizeNode->count()) {
-            $size = trim($sizeNode->text());
-        } else {
-            $size = null;
-        }
-        $info['size'] = $size;
-        $downloadsNode = $extraInfoNodes->eq(2);
-        if ($downloadsNode->count()) {
-            $downloads = trim($downloadsNode->text());
-        } else {
-            $downloads = null;
-        }
-        $info['downloads'] = $downloads;
-        $versionNode = $extraInfoNodes->eq(3);
-        if ($versionNode->count()) {
-            $version = trim($versionNode->text());
-        } else {
-            $version = null;
-        }
-        $info['version'] = $version;
-        $supportedOSNode = $extraInfoNodes->eq(4);
-        if ($supportedOSNode->count()) {
-            $supportedOS = trim($supportedOSNode->text());
-        } else {
-            $supportedOS = null;
-        }
-        $info['supported_os'] = $supportedOS;
-        $contentRatingNode = $extraInfoNodes->eq(5);
-        if ($contentRatingNode->count()) {
-            $contentRating = trim($contentRatingNode->children()->first()->text());
-        } else {
-            $contentRating = null;
-        }
-        $info['content_rating'] = $contentRating;
+        $extraInfoNodes = $crawler->filter('.hAyfc > .htlgb');
+        $extraInfoNodes->slice(0, 6)->each(function ($node) use (&$info) {
+            $nodeText = $node->text();
+            $nodeText = str_replace("\xc2\xa0", ' ', $nodeText); // convert non breaking to normal space
+            if (is_null($info['last_updated']) && preg_match('/20\d\d/', $nodeText)) {
+                $info['last_updated'] = $nodeText;
+            } elseif (is_null($info['size']) && preg_match('/^[\d,\. ]+[MG]$/', $nodeText)) {
+                $info['size'] = $nodeText;
+            } elseif (is_null($info['downloads']) && preg_match('/^[\d,\.  ]+\+$/', $nodeText)) {
+                $info['downloads'] = $nodeText;
+            } elseif (is_null($info['version']) && preg_match('/^[\d\.]+$/', $nodeText)) {
+                $info['version'] = $nodeText;
+            } elseif (is_null($info['supported_os']) && preg_match('/^[\d\.]+.+$/', $nodeText)) {
+                $info['supported_os'] = $nodeText;
+            } elseif (is_null($info['content_rating']) && $node->filter('div > .htlgb > div')->count()) {
+                $info['content_rating'] = $node->filter('div > .htlgb > div')->first()->text();
+            }
+        });
         $whatsneNode = $crawler->filter('[itemprop="description"] > content')->eq(1);
         if ($whatsneNode->count()) {
             $whatsnew = $this->cleanDescription($whatsneNode);
             $info['whatsnew'] = $whatsnew['text'];
-        } else {
-            $info['whatsnew'] = null;
         }
         $videoNode = $crawler->filter('.MSLVtf.NIc6yf');
         if ($videoNode->count()) {
             $info['video_link'] = $this->getAbsoluteUrl($videoNode->filter('[data-trailer-url]')->attr('data-trailer-url'));
             $info['video_image'] = $this->getAbsoluteUrl($videoNode->filter('img')->attr('src'));
-        } else {
-            $info['video_link'] = null;
-            $info['video_image'] = null;
         }
 
         return $info;
