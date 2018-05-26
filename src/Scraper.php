@@ -111,9 +111,7 @@ class Scraper
         $info['id'] = $id;
         $info['url'] = $crawler->filter('[itemprop="url"]')->attr('content');
         $info['image'] = $this->getAbsoluteUrl($crawler->filter('[itemprop="image"]')->attr('src'));
-        $info['title'] = $crawler->filter('[itemprop="name"] > div')->text();
-        $info['author'] = $crawler->filter('[itemprop="author"] [itemprop="name"]')->text();
-        $info['author_link'] = $this->getAbsoluteUrl($crawler->filter('[itemprop="author"] > [itemprop="url"]')->attr('content'));
+        $info['title'] = $crawler->filter('[itemprop="name"] > span')->text();
         $info['categories'] = $crawler->filter('[itemprop="genre"]')->each(function ($node) {
             return $node->text();
         });
@@ -122,7 +120,7 @@ class Scraper
         $info['screenshots'] = $crawler->filter('[itemprop="screenshot"]')->each(function ($node) {
             return $this->getAbsoluteUrl($node->filter('img')->attr('src'));
         });
-        $desc = $this->cleanDescription($crawler->filter('[itemprop="description"] > div'));
+        $desc = $this->cleanDescription($crawler->filter('[itemprop="description"] > content > div'));
         $info['description'] = $desc['text'];
         $info['description_html'] = $desc['html'];
         $ratingNode = $crawler->filter('[itemprop="aggregateRating"] > [itemprop="ratingValue"]');
@@ -139,7 +137,6 @@ class Scraper
             $votes = 0;
         }
         $info['votes'] = $votes;
-        $info['last_updated'] = trim($crawler->filter('[itemprop="datePublished"]')->text());
         $sizeNode = $crawler->filter('[itemprop="fileSize"]');
         if ($sizeNode->count()) {
             $size = trim($sizeNode->text());
@@ -161,24 +158,6 @@ class Scraper
             $version = null;
         }
         $info['version'] = $version;
-        $info['supported_os'] = trim($crawler->filter('[itemprop="operatingSystems"]')->text());
-        $info['content_rating'] = $crawler->filter('[itemprop="contentRating"]')->text();
-        $whatsneNode = $crawler->filter('.recent-change');
-        if ($whatsneNode->count()) {
-            $info['whatsnew'] = implode("\n", $whatsneNode->each(function ($node) {
-                return $node->text();
-            }));
-        } else {
-            $info['whatsnew'] = null;
-        }
-        $videoNode = $crawler->filter('.details-trailer');
-        if ($videoNode->count()) {
-            $info['video_link'] = $this->getAbsoluteUrl($videoNode->filter('.play-action-container')->attr('data-video-url'));
-            $info['video_image'] = $this->getAbsoluteUrl($videoNode->filter('.video-image')->attr('src'));
-        } else {
-            $info['video_link'] = null;
-            $info['video_image'] = null;
-        }
 
         return $info;
     }
