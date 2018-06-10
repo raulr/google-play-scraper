@@ -98,10 +98,10 @@ class ScraperTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mock);
         $handler->push($history);
         $scraper = $this->getScraper($handler);
-        $app = $scraper->getApp('com.app_h2solutions.layout', 'zh', 'cn');
+        $app = $scraper->getApp('com.instagram.android', 'zh', 'cn');
         $expected = json_decode(file_get_contents(__DIR__.'/resources/app2.json'), true);
         $this->assertEquals($expected, $app);
-        $this->assertEquals('https://play.google.com/store/apps/details?id=com.app_h2solutions.layout&hl=zh&gl=cn', $transactions[0]['request']->getUri());
+        $this->assertEquals('https://play.google.com/store/apps/details?id=com.instagram.android&hl=zh&gl=cn', $transactions[0]['request']->getUri());
     }
 
     public function testGetAppNotFound()
