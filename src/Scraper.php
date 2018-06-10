@@ -129,7 +129,7 @@ class Scraper
             'content_rating' => null,
             'whatsnew' => null,
             'video_link' => null,
-            'video_image' => null
+            'video_image' => null,
         );
 
         $info['id'] = $id;
