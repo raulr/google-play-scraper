@@ -164,7 +164,12 @@ class Scraper
             $info['votes'] = intval(str_replace(array(',', '.', ' '), '', $votesNode->text()));
         }
         $extraInfoNodes = $crawler->filter('.hAyfc > .htlgb');
-        $extraInfoNodes->slice(0, 6)->each(function ($node) use (&$info) {
+        if ($extraInfoNodes->count() && $extraInfoNodes->first()->filter('div > img:first-child')->count()) {
+            $startingExtraInfoNode = 1; // Skip family library node.
+        } else {
+            $startingExtraInfoNode = 0;
+        }
+        $extraInfoNodes->slice($startingExtraInfoNode, $startingExtraInfoNode + 6)->each(function ($node) use (&$info) {
             $nodeText = $node->text();
             $nodeText = str_replace("\xc2\xa0", ' ', $nodeText); // convert non breaking to normal space
             if (is_null($info['last_updated']) && preg_match('/20\d\d/', $nodeText)) {
@@ -175,7 +180,7 @@ class Scraper
                 $info['downloads'] = $nodeText;
             } elseif (is_null($info['version']) && preg_match('/^[\d\.]+$/', $nodeText)) {
                 $info['version'] = $nodeText;
-            } elseif (is_null($info['supported_os']) && preg_match('/^[\d\.]+.+$/', $nodeText)) {
+            } elseif (is_null($info['supported_os']) && preg_match('/^(\d+\.)+\d+.+$/', $nodeText)) {
                 $info['supported_os'] = $nodeText;
             } elseif (is_null($info['content_rating']) && $node->filter('div > .htlgb > div')->count()) {
                 $info['content_rating'] = $node->filter('div > .htlgb > div')->first()->text();
