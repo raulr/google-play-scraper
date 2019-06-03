@@ -152,7 +152,7 @@ class Scraper
         $info['screenshots'] = $crawler->filter('[data-screenshot-item-index]')->each(function ($node) {
             return $this->getAbsoluteUrl($node->filter('img')->attr('src'));
         });
-        $desc = $this->cleanDescription($crawler->filter('[itemprop="description"] > content > div'));
+        $desc = $this->cleanDescription($crawler->filter('[itemprop="description"] > span > div'));
         $info['description'] = $desc['text'];
         $info['description_html'] = $desc['html'];
         $ratingNode = $crawler->filter('.BHMmbe');
