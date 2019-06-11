@@ -149,8 +149,8 @@ class Scraper
             $price = $priceNode->attr('content');
             $info['price'] = $price == '0' ? null : $price;
         }
-        $info['screenshots'] = $crawler->filter('[data-screenshot-item-index]')->each(function ($node) {
-            return $this->getAbsoluteUrl($node->filter('img')->attr('src'));
+        $info['screenshots'] = $crawler->filter('[data-screenshot-item-index] img')->each(function ($node) {
+            return $this->getAbsoluteUrl($node->attr('data-src') ?: $node->attr('src'));
         });
         $desc = $this->cleanDescription($crawler->filter('[itemprop="description"] > span > div'));
         $info['description'] = $desc['text'];
@@ -186,15 +186,15 @@ class Scraper
                 $info['content_rating'] = $node->filter('div > .htlgb > div')->first()->text();
             }
         });
-        $whatsneNode = $crawler->filter('[itemprop="description"] > content')->eq(1);
-        if ($whatsneNode->count()) {
-            $whatsnew = $this->cleanDescription($whatsneNode);
+        $whatsnewNode = $crawler->filter('[itemprop="description"] > span')->eq(1);
+        if ($whatsnewNode->count()) {
+            $whatsnew = $this->cleanDescription($whatsnewNode);
             $info['whatsnew'] = $whatsnew['text'];
         }
-        $videoNode = $crawler->filter('.MSLVtf.NIc6yf');
+        $videoNode = $crawler->filter('[data-trailer-url]');
         if ($videoNode->count()) {
-            $info['video_link'] = $this->getAbsoluteUrl($videoNode->filter('[data-trailer-url]')->attr('data-trailer-url'));
-            $info['video_image'] = $this->getAbsoluteUrl($videoNode->filter('img')->attr('src'));
+            $info['video_link'] = $this->getAbsoluteUrl($videoNode->attr('data-trailer-url'));
+            $info['video_image'] = $this->getAbsoluteUrl($videoNode->parents()->filter('img')->attr('src'));
         }
 
         return $info;
