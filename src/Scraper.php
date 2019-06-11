@@ -66,9 +66,9 @@ class Scraper
         ));
 
         $collections = $crawler
-            ->filter('.child-submenu-link')
+            ->filter('.LNKfBf a')
             ->reduce(function ($node) {
-                return strpos($node->attr('href'), '/store/apps') === 0;
+                return preg_match('/store\/apps\/category\/[A-Z_]+$/', $node->attr('href')) === 1;
             })
             ->each(function ($node) {
                 $href = $node->attr('href');
