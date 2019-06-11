@@ -329,19 +329,8 @@ class Scraper
             $params['rating'] = $rating;
         }
 
-        do {
-            $crawler = $this->request($path, $params);
-            $apps = array_merge($apps, $this->parseAppList($crawler));
-            unset($params['pagTok']);
-            foreach ($crawler->filter('script') as $scriptNode) {
-                if (preg_match('/\\\x22(GAE.+?)\\\x22/', $scriptNode->textContent, $matches)) {
-                    $params['pagTok'] = preg_replace('/\\\\\\\u003d/', '=', $matches[1]);
-                    break;
-                }
-            }
-        } while (array_key_exists('pagTok', $params));
-
-        return $apps;
+        $crawler = $this->request($path, $params);
+        return $this->parseSearchAppList($crawler);
     }
 
     public function getDetailSearch($query, $price = 'all', $rating = 'all', $lang = null, $country = null)
@@ -427,6 +416,38 @@ class Scraper
             }
             $app['rating'] = $rating;
             $priceNode = $node->filter('.display-price');
+            if (!$priceNode->count()) {
+                $price = null;
+            } elseif (!preg_match('/\d/', $priceNode->text())) {
+                $price = null;
+            } else {
+                $price = $priceNode->text();
+            }
+            $app['price'] = $price;
+
+            return $app;
+        });
+    }
+
+    protected function parseSearchAppList(Crawler $crawler)
+    {
+        return $crawler->filter('.WHE7ib')->each(function ($node) {
+            $app = array();
+            $app['url'] = $this->getAbsoluteUrl($node->filter('a.poRVub')->attr('href'));
+            $app['id'] = substr($app['url'], strpos($app['url'], '=') + 1);
+            $app['title'] = $node->filter('.b8cIId.ReQCgd.Q9MA7b')->attr('title');
+            $app['image'] = $this->getAbsoluteUrl($node->filter('img')->attr('data-src'));
+            $app['author'] = $node->filter('.b8cIId.ReQCgd.KoLSrc a div')->text();
+            $ratingNode = $node->filter('.pf5lIe [aria-label]');
+            if (!$ratingNode->count()) {
+                $rating = 0.0;
+            } elseif (preg_match('/\d+([.,]\d+)?/', $ratingNode->attr('aria-label'), $matches)) {
+                $rating = floatval(str_replace(',', '.', $matches[0]));
+            } else {
+                throw new \RuntimeException('Error parsing rating');
+            }
+            $app['rating'] = $rating;
+            $priceNode = $node->filter('.VfPpfd.ZdBevf.i5DZme span');
             if (!$priceNode->count()) {
                 $price = null;
             } elseif (!preg_match('/\d/', $priceNode->text())) {
