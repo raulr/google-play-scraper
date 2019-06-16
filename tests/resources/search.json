@@ -1,362 +1,452 @@
 [
     {
-        "id": "com.pikpok.rua2",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.pikpok.rua2",
-        "title": "Robot Unicorn Attack 2",
-        "image": "https:\/\/lh3.ggpht.com\/gvcyMzcbqGpVlMnIxyWNI7__FFTHxWI19KsaYvrtGcvuTD7h4AYt4vGcQwRXyKh1RCc=w340",
-        "author": "[adult swim] games",
-        "rating": 4.292028427124,
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.tutotoons.app.mybabyunicorn.free",
+        "id": "com.tutotoons.app.mybabyunicorn.free",
+        "title": "My Baby Unicorn - Virtual Pony Pet Care & Dress Up",
+        "image": "https:\/\/lh3.googleusercontent.com\/DA808Xzc-zVTt5Ev62kTv2p0tc6-t1hYrwYSmDySCdvIWHgHHvz50-05euS_gqBovQQ=s128",
+        "author": "TutoTOONS",
+        "rating": 4.1,
         "price": null
     },
     {
-        "id": "eu.aagames.unicornpet",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=eu.aagames.unicornpet",
-        "title": "Unicorn Pet",
-        "image": "https:\/\/lh3.ggpht.com\/c6iKEyzSrJ1wmQ_0r4Nqbt_Fmpn9OHruIYALvIgo74HaRTGK2WPNuG_q4pTdke82TdAP=w340",
-        "author": "A&A Games",
-        "rating": 4.0992641448975,
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.infokombinat.coloringunicorns",
+        "id": "com.infokombinat.coloringunicorns",
+        "title": "Unicorn Coloring Book",
+        "image": "https:\/\/lh3.googleusercontent.com\/K2pCIHCfjujyEIG_TYziXGZVcbwGzgGa6P3WN3nDComsduPQBCF9hf1BW8wI6A6HLbc=s128",
+        "author": "Infokombinat",
+        "rating": 4.6,
         "price": null
     },
     {
-        "id": "com.hanna.unicorn",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.hanna.unicorn",
-        "title": "Unicorn wallpapers",
-        "image": "https:\/\/lh6.ggpht.com\/6M80zS-ED8fZgLhJ8xtU71iV8fp91HzTst3yxz_rW75hFtqK1w7iOLp0uDt6cW3H5A=w340",
-        "author": "HAnna",
-        "rating": 4.239107131958,
-        "price": null
-    },
-    {
-        "id": "com.gtracegames.flyingunicornsimulator",
         "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.gtracegames.flyingunicornsimulator",
+        "id": "com.gtracegames.flyingunicornsimulator",
         "title": "Flying Unicorn Simulator Free",
-        "image": "https:\/\/lh3.googleusercontent.com\/l8EemqwgBE2TTRallaG8lhk3vdQ42DZtiClXFPuVGpWv7aOzh5g3EL7mLxj-LKPfiqI=w340",
+        "image": "https:\/\/lh3.googleusercontent.com\/l8EemqwgBE2TTRallaG8lhk3vdQ42DZtiClXFPuVGpWv7aOzh5g3EL7mLxj-LKPfiqI=s128",
         "author": "GT Race Games",
-        "rating": 3.9621212482452,
+        "rating": 4,
         "price": null
     },
     {
-        "id": "com.bros.games.coloring.game.kids.unicorn",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.bros.games.coloring.game.kids.unicorn",
-        "title": "Unicorn coloring book for kids",
-        "image": "https:\/\/lh3.googleusercontent.com\/p1VPbhbrXXKDdSqn9gb-pkGojJ8r6P_IHRHMtGHf4DxpFgR1HK56ZUXenE-Z5WXBGbSo=w340",
-        "author": "2bros - games for kids",
-        "rating": 4.1314797401428,
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.piupiuapps.coloringglitterunicorns",
+        "id": "com.piupiuapps.coloringglitterunicorns",
+        "title": "Unicorn Coloring Book Glitter",
+        "image": "https:\/\/lh3.googleusercontent.com\/95N2Yjo0Oma7FSJ3HcVIC98d74yYOGTbBKCQcWhAUpSFzhHybOo7-hu_O66dkkb3Spw=s128",
+        "author": "Piu Piu Apps",
+        "rating": 4.2,
         "price": null
     },
     {
-        "id": "com.marketjs.flappyunicorn",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.marketjs.flappyunicorn",
-        "title": "Flappy Unicorn",
-        "image": "https:\/\/lh4.ggpht.com\/pxNQFNgjOtRj7fnmqZV0sp6HI3l-mUxJ4hQ9c7fzomGp9EpEdudwVpnxmUgfuP2VVc8=w340",
-        "author": "MarketJS",
-        "rating": 4.0246963500977,
-        "price": null
-    },
-    {
-        "id": "com.play.game2.UnicornDashk",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.play.game2.UnicornDashk",
-        "title": "Crazy Unicorn Dash",
-        "image": "https:\/\/lh3.googleusercontent.com\/Is4x_fgwkAPyApOkW9crNxiJUH3lTMmvMfe0UjWWsdaT92_4xuIESPv3WX1RnQ3xpwQl=w340",
-        "author": "Arcade play et.",
-        "rating": 4.4301834106445,
-        "price": null
-    },
-    {
-        "id": "pony.unicorn.theme",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=pony.unicorn.theme",
-        "title": "Pony Unicorn Theme",
-        "image": "https:\/\/lh3.googleusercontent.com\/VREqyvxfh3si7sRB7lfdSU504tAE2NlxyWPgyVANEaAM4gg_KNSpRmXLV9vLHJenKnE=w340",
-        "author": "Huizhang Theme",
-        "rating": 4.6057691574097,
-        "price": null
-    },
-    {
-        "id": "com.bluebodysoft.talkingunicorn",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.bluebodysoft.talkingunicorn",
-        "title": "Talking Unicorn",
-        "image": "https:\/\/lh3.googleusercontent.com\/IaNTAujHrAneOHVnNfRrMyS_EZpfQk4dt60E3zfUk1D2CXe821927PIFZuTGezD5d50=w340",
-        "author": "Bluebody Soft",
-        "rating": 4.2608695030212,
-        "price": null
-    },
-    {
-        "id": "com.beautygirlsinc.android_unicornprincess",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.beautygirlsinc.android_unicornprincess",
-        "title": "Fairy Princess Unicorn Salon",
-        "image": "https:\/\/lh3.googleusercontent.com\/zr5ukYk449rw8ebOqrN6R04A0QtH0aDvrxM2JNhD7RA8X7yKxjdznwHDteN2kZH32QoG=w340",
-        "author": "Beauty Girls",
-        "rating": 3.9868578910828,
-        "price": null
-    },
-    {
-        "id": "com.tinydragonadventuregames.pony.crafting.unicorn.game.girls.color.quest.pet.building.minecraft.cube.pixel.rainbow.secret.free",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.tinydragonadventuregames.pony.crafting.unicorn.game.girls.color.quest.pet.building.minecraft.cube.pixel.rainbow.secret.free",
-        "title": "Pony Girls Craft: Exploration",
-        "image": "https:\/\/lh3.googleusercontent.com\/Z2zm2gf3l9HF6yQd7Ay80EKaLMg-pBilG4-T0W6-2O_N25AXBXXCJBRZr2Dhcs29fJiD=w340",
-        "author": "Tiny Dragon Adventure Games: Craft, Sport & RPG",
-        "rating": 4.2847099304199,
-        "price": null
-    },
-    {
-        "id": "air.UnicornPixy",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=air.UnicornPixy",
-        "title": "Unicorn Pixy",
-        "image": "https:\/\/lh3.googleusercontent.com\/4wobCtDqxf792vRaHNkuIghLoHJpDfbdvy8o0C7R6UIW535yTWutD7U2AATsQSB4vg=w340",
-        "author": "Ajna Game",
-        "rating": 4.5298013687134,
-        "price": null
-    },
-    {
-        "id": "com.ikeyboard.theme.rainbowunicorn",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.ikeyboard.theme.rainbowunicorn",
-        "title": "Rainbow Unicorn Kika Keyboard",
-        "image": "https:\/\/lh3.googleusercontent.com\/oOJnO2uJ0G_W33Px4H6240ed1gdLCTHcFU-CH7oYokqfbUSyDYMdtRkstAjGdw-JBk4=w340",
-        "author": "Kika Theme Studio",
-        "rating": 4.8190474510193,
-        "price": null
-    },
-    {
-        "id": "com.tinydragonadventuregames.unicorn.craft.pony.game.girls.color.princess.pet.building.minecraft.cube.pixel.fairy.little.block",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.tinydragonadventuregames.unicorn.craft.pony.game.girls.color.princess.pet.building.minecraft.cube.pixel.fairy.little.block",
-        "title": "Unicorn Girl Craft Exploration",
-        "image": "https:\/\/lh3.googleusercontent.com\/3ULhG53AXcQ0kEfA-pKyiXzOz7hktOPDYw2I7TXPt3qeRU68sf5DKepN-ZManJ7LnjU=w340",
-        "author": "Tiny Dragon Adventure Games: Craft, Sport & RPG",
-        "rating": 4.0507245063782,
-        "price": null
-    },
-    {
-        "id": "net.lionbird.google.unicornEvolutionWorld",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=net.lionbird.google.unicornEvolutionWorld",
-        "title": "Unicorn Evolution World",
-        "image": "https:\/\/lh3.googleusercontent.com\/1D3QG34JGtGSkFtnCOICXMrslOqCDWC1IHxum12er2neHTaMoXdD-bX6pD10bgLVrh0N=w340",
-        "author": "LIONBIRD LTD",
-        "rating": 4.0300660133362,
-        "price": null
-    },
-    {
-        "id": "com.fafa.unicorn",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.fafa.unicorn",
-        "title": "Unicorn Dash",
-        "image": "https:\/\/lh3.googleusercontent.com\/MGQRJAssTs1z4lubTj5y6D7M_Jim6CFCyZf8_6Uy2OI4ljk89hN_86c4-JUPE8L-WxE2=w340",
-        "author": "Fafa",
-        "rating": 3.9677419662476,
-        "price": null
-    },
-    {
-        "id": "com.GoldenWallpapers.Uni02",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.GoldenWallpapers.Uni02",
-        "title": "Unicorn Wallpaper",
-        "image": "https:\/\/lh3.googleusercontent.com\/-VMn96qFklLd_z9Yr-mERGarnOWTcDN9DTjvPDMUwYi_4rU9xryMh7NZ3kHj0694ozg=w340",
-        "author": "GoldenWallpapers",
-        "rating": 4.6666665077209,
-        "price": null
-    },
-    {
-        "id": "slots.chookapps.unicornslots",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=slots.chookapps.unicornslots",
-        "title": "Unicorn Slots",
-        "image": "https:\/\/lh5.ggpht.com\/YtjH54tWCp2zBwwQsDhC0BgEeOODpwtgA3-5Dq3AMP33zt37IBzrrtoHXWi6FQwg-Q=w340",
-        "author": "Chook Apps",
-        "rating": 4.2953844070435,
-        "price": null
-    },
-    {
-        "id": "com.UnicornLiveWallpaperHDHQ",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.UnicornLiveWallpaperHDHQ",
-        "title": "Unicorn Live Wallpaper",
-        "image": "https:\/\/lh5.ggpht.com\/y8oqGuEDsWJiT7tVxxVR-tjlo7J1use8Y-EfaTD6_05hA2BcojXK6gnkCwPILBXfYZhw=w340",
-        "author": "Creative Factory Wallpapers",
-        "rating": 4.2665295600891,
-        "price": null
-    },
-    {
-        "id": "com.ikeyboard.theme.glitter_unicorn",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.ikeyboard.theme.glitter_unicorn",
-        "title": "Glitter Unicorn KikaKeyboard\ud83e\udd84",
-        "image": "https:\/\/lh3.googleusercontent.com\/czSaIDvWsM9dkyAG_U6Kc1FYw_mEcNc_mw90G-_AnrHKWrFwaam2eIvuhDQvMgPyeVGu=w340",
-        "author": "Best Theme Design Apps",
-        "rating": 4.2793340682983,
-        "price": null
-    },
-    {
-        "id": "ultra_epic.arkad.unicornwallpapers",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=ultra_epic.arkad.unicornwallpapers",
-        "title": "Unicorn HD Wallpapers",
-        "image": "https:\/\/lh6.ggpht.com\/gOpnshwBdtkWJ4Rdu9XEAGr177ILOdW6n_tgGVARVkAJtGKNvMAawm4UjpqvWwIovQ=w340",
-        "author": "ARKAD",
-        "rating": 4.0403480529785,
-        "price": null
-    },
-    {
-        "id": "unicorn.bigwinstudios.slots",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=unicorn.bigwinstudios.slots",
-        "title": "Slots Unicorn - Free Casino",
-        "image": "https:\/\/lh3.googleusercontent.com\/ymYsgURJzHdczgpnBpGFMdwGdxAIzdatcEzpTs7rFDslT2yq3EgcAyBzo9NND5-9m81u=w340",
-        "author": "Big Win Studios - Free slots, casino, pokies, fun",
-        "rating": 4.6189789772034,
-        "price": null
-    },
-    {
-        "id": "aqua.unicorn.zipper.lock.screen",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=aqua.unicorn.zipper.lock.screen",
-        "title": "Unicorn Zipper Lock Screen",
-        "image": "https:\/\/lh3.googleusercontent.com\/JFB-6CKerXXr1H_IvwxddDLuU6qekqM9ZnOJzEYViDE8HhyNJP8U1wPm7oDEjcWQgUuW=w340",
-        "author": "AquaKing",
-        "rating": 4.3333334922791,
-        "price": null
-    },
-    {
-        "id": "com.jb.gokeyboard.theme.BestThemes.pinkunicorn",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.jb.gokeyboard.theme.BestThemes.pinkunicorn",
-        "title": "Pink Unicorn Keyboard",
-        "image": "https:\/\/lh3.googleusercontent.com\/WzvwdfQc41f6jF1KVyQpIrzurrB76NFAhcmvYpKUCWr1NHpDzZBNGbHQEUwSt-13fA=w340",
-        "author": "BestThemes",
-        "rating": 4.0782122612,
-        "price": null
-    },
-    {
-        "id": "com.daylightglobal.mysteriousunicorn",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.daylightglobal.mysteriousunicorn",
-        "title": "Mysterious Unicorn Free Slots",
-        "image": "https:\/\/lh3.googleusercontent.com\/6F7Nz33zywbU7tV98Z35kN0dhOBVDUzcBrs3P1UgOFOzkNfY0Ro3NMZ1mwN-9UHnChs=w340",
-        "author": "Daylight Global",
-        "rating": 4.4270763397217,
-        "price": null
-    },
-    {
-        "id": "air.com.gamesbox.babyunicornponydressup",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=air.com.gamesbox.babyunicornponydressup",
-        "title": "Little Pony Unicorn",
-        "image": "https:\/\/lh3.googleusercontent.com\/ZsCUwMdWOhSrzfRU7Cw3OCdg07F0Rc_gCMMGA-RTedh-znzLDCn0OyQSPsKHk7fSew=w340",
-        "author": "GamesBox",
-        "rating": 4.0577616691589,
-        "price": null
-    },
-    {
-        "id": "com.pikasapps.unicorn.wallpapers",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.pikasapps.unicorn.wallpapers",
-        "title": "Unicorn Wallpapers",
-        "image": "https:\/\/lh3.googleusercontent.com\/_Lun8VGmRKIbflWAUMfRN5hDlpoDEpO02A3SjJNJgU7VEVbwEqO2XvPbOJ35PuvRdf0=w340",
-        "author": "PikasApps",
-        "rating": 4.3000001907349,
-        "price": null
-    },
-    {
-        "id": "air.com.gamesbox.unicornponyprincessdressup",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=air.com.gamesbox.unicornponyprincessdressup",
-        "title": "Pony Princess Beauty Salon",
-        "image": "https:\/\/lh3.googleusercontent.com\/vkiJ_e-OlTOw2Hdxjm451uqx3CPB9FW9KV5ZSr8KiEFK6CIuahBI_JweuogCwC7BmRmF=w340",
-        "author": "GamesBox",
-        "rating": 4.3386006355286,
-        "price": null
-    },
-    {
-        "id": "com.musicforyou.unicorn.shooter",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.musicforyou.unicorn.shooter",
-        "title": "Unicorns Shooter",
-        "image": "https:\/\/lh3.googleusercontent.com\/Frdv6xrz7LObeVdpifYxSGwUfv_jSBqDW-vMC2yyAif0aXzUL-wIgBANG4q78fEQKUnM=w340",
-        "author": "Music for You",
-        "rating": 5,
-        "price": null
-    },
-    {
-        "id": "cyburg.eu.soundboard.charlietheunicorn",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=cyburg.eu.soundboard.charlietheunicorn",
-        "title": "Charlie The Unicorn 1 2 Quotes",
-        "image": "https:\/\/lh4.ggpht.com\/J1MLUizITf8JWxioOq0WlfrA9dKqAVFoPU0IFOKBzUcfjKo0DsXzBmyYWBjc5aZu1Sw=w340",
-        "author": "cyburg.eu",
-        "rating": 4.307692527771,
-        "price": null
-    },
-    {
-        "id": "com.ea.game.pegglex_row",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.ea.game.pegglex_row",
-        "title": "Peggle Blast",
-        "image": "https:\/\/lh3.googleusercontent.com\/AA9QM1DOMUJrQ9kxfzyyfxIFq6coeYwJQWM_YzBIdvfc-Wd_pqVLujxI0nmeW3znEg6A=w340",
-        "author": "ELECTRONIC ARTS",
-        "rating": 4.0608654022217,
-        "price": null
-    },
-    {
-        "id": "com.suryapankh.superunicorn",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.suryapankh.superunicorn",
-        "title": "Super Unicorn",
-        "image": "https:\/\/lh3.googleusercontent.com\/P-5taveeZGz7AsGtNdhzHd_nMAr4RKt99V_dlTOOQ6Hb8FKExAj8rs3woG6jPF42YQ=w340",
-        "author": "Suryapankh Infotech",
-        "rating": 4.888888835907,
-        "price": null
-    },
-    {
-        "id": "com.unicornwallpaper.unicornpictures.cute.horn.art.flying.baby.hd.beautiful.funny.pink.purple.real.cartoon",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.unicornwallpaper.unicornpictures.cute.horn.art.flying.baby.hd.beautiful.funny.pink.purple.real.cartoon",
-        "title": "Amazing Unicorn Wallpaper",
-        "image": "https:\/\/lh3.googleusercontent.com\/L11Ut7VxuBODlZM2fa1nM2sVFh3ybb9DFua14CFsR2HWwM5UhMpEAYeWUPhYjxGCYcBT=w340",
-        "author": "GoaliSoft",
-        "rating": 4.3684210777283,
-        "price": null
-    },
-    {
-        "id": "com.tmestudios.unicornlivewallpaper",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.tmestudios.unicornlivewallpaper",
-        "title": "Unicorn Live Wallpaper",
-        "image": "https:\/\/lh3.googleusercontent.com\/N1cyohj2PwgXviv_EuEdrZkd8XGHE_UH68u2DLFBo5iSpMwNpRzb9aKQXjMcpZMFLg1r=w340",
-        "author": "Wallpaper Art",
-        "rating": 4.3254437446594,
-        "price": null
-    },
-    {
-        "id": "com.playnlearnapps.unicornmatch.Unicornmatchrace",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.playnlearnapps.unicornmatch.Unicornmatchrace",
-        "title": "Unicorn Game Free",
-        "image": "https:\/\/lh4.ggpht.com\/g1aTebd28OVKU32Z9ldpmpifzMKHT3v9bibd1wmzyI8TvLzbngD6EFA570aL1vq1hg=w340",
-        "author": "Play N Learn",
-        "rating": 4.0625,
-        "price": null
-    },
-    {
-        "id": "com.wildfoot.clan.of.flying.horse",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.wildfoot.clan.of.flying.horse",
-        "title": "Clan of Pegasus - Flying Horse",
-        "image": "https:\/\/lh3.googleusercontent.com\/6ibjYbeymI6gG7BU1tKDjJ8P3-oC4TU8bEtMIpkH6QqCwoau2Yfpt9Eua7j0U_55Eg=w340",
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.wildfoot.clan.of.unicorn",
+        "id": "com.wildfoot.clan.of.unicorn",
+        "title": "Clan of Unicorn",
+        "image": "https:\/\/lh3.googleusercontent.com\/trO8B8bQTqbxCq0nzqv6RhW5mrI099z8xaQQYRqwGZ7QS1VsauP4pgUq4if10qC4VuA=s128",
         "author": "Wild Foot Games",
-        "rating": 3.9611554145813,
+        "rating": 4,
         "price": null
     },
     {
-        "id": "com.flyingapplicationcreator.unicornjigsawpuzzles",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.flyingapplicationcreator.unicornjigsawpuzzles",
-        "title": "Unicorn Jigsaw Puzzles",
-        "image": "https:\/\/lh3.ggpht.com\/cHI3k4XLgHs7PUQoM3QHfN7j08UFwmyNK0S4qeO73YFS8hacP3qxFJX7LOQBSRewdcQ=w340",
-        "author": "Flying Application Creator",
-        "rating": 4.5263156890869,
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.trendnewlock.unicornfantaisie",
+        "id": "com.trendnewlock.unicornfantaisie",
+        "title": "Unicorn Fantaisie Screen Lock",
+        "image": "https:\/\/lh3.googleusercontent.com\/wb4vAilekJJPo-hByBo_SiQMNcTcwzzgEwQVC8dr112QMegsXbcunwwrkGK0bpGoV5gh=s128",
+        "author": "Trend NewLock",
+        "rating": 4.2,
         "price": null
     },
     {
-        "id": "com.gau.go.launcherex.theme.unicorn.free",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.gau.go.launcherex.theme.unicorn.free",
-        "title": "Unicorn GO Launcher Theme",
-        "image": "https:\/\/lh3.ggpht.com\/FL0DHnr6rodU4y44GLqpSC_Xx-AM_MHLKE_IvZ2HBshSBIcOSE6SXPWRtXukvTExPEg=w340",
-        "author": "ZT.art",
-        "rating": 4.2794389724731,
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.kidsfoodinc.unicorn.cooking.game",
+        "id": "com.kidsfoodinc.unicorn.cooking.game",
+        "title": "Unicorn Chef: Cooking Games for Girls",
+        "image": "https:\/\/lh3.googleusercontent.com\/oFEFSsxl4gVaB5UKwvpIxbBBJPBDvIPkjWQ4wUyoRpwT6HUTEu3hGTK-SXHBNc7X6uu1=s128",
+        "author": "Kids Food Games Inc.",
+        "rating": 4.3,
         "price": null
     },
     {
-        "id": "com.jiubang.goscreenlock.theme.cutepinkunicornlocker",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.jiubang.goscreenlock.theme.cutepinkunicornlocker",
-        "title": "Cute Pink Unicorn Locker",
-        "image": "https:\/\/lh3.googleusercontent.com\/Gxb9mSOaBd6Vm3f2C1W3Cco2tjngtMl2cHuJNssDx_AncCwrcQeAnAJ3hukBbHAz8w=w340",
-        "author": "Lockers and SMS Themes",
-        "rating": 4.370370388031,
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.appcraft.unicorn",
+        "id": "com.appcraft.unicorn",
+        "title": "UNICORN Color by Number | Pixel Art Coloring Games",
+        "image": "https:\/\/lh3.googleusercontent.com\/8Pqz6gD-HY3dQN0d_MUsNFR6hk-BFJpkDQDF7fUU5zTmgLYFcH6eomlIEdbAZ7G0PjY=s128",
+        "author": "Unicorn Color by Number Games for Free",
+        "rating": 4.5,
         "price": null
     },
     {
-        "id": "com.unicorndash.flypegasus",
-        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.unicorndash.flypegasus",
-        "title": "Unicorn Dash Fly Pegasus 3D HD",
-        "image": "https:\/\/lh3.googleusercontent.com\/AkI-c55SvzLoE3SBKQYA3TnDFnN3pqTnnoWHnUvFtFuc1gwcCge4DHIHYztnUlFLwfR1=w340",
-        "author": "Kids Dreams Games",
-        "rating": 3.9914162158966,
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.tabtale.unicorn.food",
+        "id": "com.tabtale.unicorn.food",
+        "title": "Unicorn Food - Rainbow Glitter Food & Fashion",
+        "image": "https:\/\/lh3.googleusercontent.com\/WsuB3bQl8jg_gfbcLLe75bGoeU2pD9JP-nGv1G69QqfynKfTqDIwEu_hFUJp3Bh6ew=s128",
+        "author": "TabTale",
+        "rating": 4.3,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.gamesforgirlsfree.unicorn",
+        "id": "com.gamesforgirlsfree.unicorn",
+        "title": "Unicorn Dress Up - Girls Games",
+        "image": "https:\/\/lh3.googleusercontent.com\/Oy7sD7ADRhRFH9np-pgSQQy_-fiLZl4xMgyctiF6VBtOtvE8JwQ0Yx3w9iP3rctdvtdZ=s128",
+        "author": "Best Dress Up Games For Girls",
+        "rating": 4.3,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.coloringbook.art.games.coloring.book.unicorns",
+        "id": "com.coloringbook.art.games.coloring.book.unicorns",
+        "title": "Animated Glitter Coloring Book - My Little Unicorn",
+        "image": "https:\/\/lh3.googleusercontent.com\/a0nDowASy9zpDNjJ3c6UlSsQ_RMRNZcjhUtilM4SJ1AIQqJ8kuQ-VWaKTFyO-CgV6g=s128",
+        "author": "Anhjaseka Coloring Games",
+        "rating": 4.2,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.piupiuapps.coloring3dunicorns",
+        "id": "com.piupiuapps.coloring3dunicorns",
+        "title": "Unicorn 3D Coloring Book",
+        "image": "https:\/\/lh3.googleusercontent.com\/khZcnxONTf0Sfj6JLZcvhSxpW2OsdEcBUde_J8wzhcm_1jrUvk2nOzgAl5Xaakad9I4=s128",
+        "author": "Piu Piu Apps",
+        "rating": 4.1,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.livewallpapers.unicorn",
+        "id": "com.livewallpapers.unicorn",
+        "title": "Unicorn Live Wallpaper",
+        "image": "https:\/\/lh3.googleusercontent.com\/getWQc8gAUmT-76FULGvaTwu0Sm-DaScD4ij4IEcgBvROJf5Td_w-UZqXnlgLV0T4NDn=s128",
+        "author": "Amazing Live Wallpaperss",
+        "rating": 4.3,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.hg.ponypet.petcare.nurserydaycare",
+        "id": "com.hg.ponypet.petcare.nurserydaycare",
+        "title": "Twin Baby Unicorn Daycare - Care & Dress Up",
+        "image": "https:\/\/lh3.googleusercontent.com\/1APFUKB5jnXcy0VhvZ738jg1amjOvws-U5emn-z0KpfLUwh3IxXeIpc8RyOgv_M_2xBy=s128",
+        "author": "Hello-Game",
+        "rating": 4,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.evolutiongames.mergeunicorns",
+        "id": "com.evolutiongames.mergeunicorns",
+        "title": "Merge\u00a0Unicorn\u00a0- Kawaii Idle Evolution Clicker Game",
+        "image": "https:\/\/lh3.googleusercontent.com\/5kID5PIoRfQfdwU0p4qrOoJwdTGN3-aAc755xAf3m8GSBA1RVM3bUCpylZEC5h59EPGT=s128",
+        "author": "Evolution Games GmbH",
+        "rating": 4.6,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=unicorn.horse.magic.background",
+        "id": "unicorn.horse.magic.background",
+        "title": "Majestic Unicorn Live Wallpaper",
+        "image": "https:\/\/lh3.googleusercontent.com\/P9SBn9x9037DxzZ0Cy8nXTzUs7MhJ5Jm-d0FZPUDSEe-oCjyTStM5S01qkR3iKaHWJPT=s128",
+        "author": "HD Live Wallpapers and Clocks",
+        "rating": 4.6,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=pl.netigen.diaryunicorn",
+        "id": "pl.netigen.diaryunicorn",
+        "title": "Unicorn Diary (with lock - password)",
+        "image": "https:\/\/lh3.googleusercontent.com\/vIIKokMIV7jvmS1J4YkG5FJXZyO3MtqPHff7weLStaUFpoAmbexG21YZAAKYZyYJvh9K=s128",
+        "author": "Netigen Unicorn",
+        "rating": 4.6,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=air.com.rosytales.cuteunicorncaringanddressup",
+        "id": "air.com.rosytales.cuteunicorncaringanddressup",
+        "title": "Cute Unicorn Caring and Dressup",
+        "image": "https:\/\/lh3.googleusercontent.com\/ppWys_-ev-RNKxNTpSgMx7mQzki0G56AVyZOhLpYkyhRJRBkYnvMGHI3oTjsCoa8Dso=s128",
+        "author": "rosytales",
+        "rating": 4.2,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.pikpok.rua2",
+        "id": "com.pikpok.rua2",
+        "title": "Robot Unicorn Attack 2",
+        "image": "https:\/\/lh3.ggpht.com\/gvcyMzcbqGpVlMnIxyWNI7__FFTHxWI19KsaYvrtGcvuTD7h4AYt4vGcQwRXyKh1RCc=s128",
+        "author": "[adult swim] games",
+        "rating": 4.3,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=unicorn.white.pink.piano.tiles",
+        "id": "unicorn.white.pink.piano.tiles",
+        "title": "Unicorn Piano Tiles",
+        "image": "https:\/\/lh3.googleusercontent.com\/XSbbXBakfzS8u7Zqzo1ID5YwGuTBGMVzutPprKKUfQjg0GsI0meadB__GI_W8Nro0WNb=s128",
+        "author": "Cala Games",
+        "rating": 4.3,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=air.com.winkypinky.mylittleunicorn",
+        "id": "air.com.winkypinky.mylittleunicorn",
+        "title": "My Little Unicorn \ud83e\udd84 Magic Horse",
+        "image": "https:\/\/lh3.googleusercontent.com\/zEgGEisivvrWlCm5Oplx3z-xgq4fmn0L-Nhdjr8Rv3fzdVIf0VsqRr-Oo-pG-bGdcok=s128",
+        "author": "winkypinky",
+        "rating": 4.2,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.infokombinat.coloringbynumbersunicorns",
+        "id": "com.infokombinat.coloringbynumbersunicorns",
+        "title": "Unicorn Color by Number \u2013 Unicorn Coloring Book",
+        "image": "https:\/\/lh3.googleusercontent.com\/i_2swqQfAsRvCIwXHIvnCgCZWCow1Q_EEdw9fm8QsfzFK9rL3t6SwBjkZfhEEdbpbFU=s128",
+        "author": "Infokombinat",
+        "rating": 4.5,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.cuteunicornio.kokowallpapers",
+        "id": "com.cuteunicornio.kokowallpapers",
+        "title": "kawaii Unicorn Wallpapers - cute backgrounds",
+        "image": "https:\/\/lh3.googleusercontent.com\/BOT_OAuemFS4V1dIH5oFEpnVcSRhpnx9U00BnksL3b5tZbvuDmx7CoVqFwjFIlshZw=s128",
+        "author": "keltoumoustyf wallpaper",
+        "rating": 4.4,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.threedfungamesforfree.unicorn",
+        "id": "com.threedfungamesforfree.unicorn",
+        "title": "Unicorn Fantasy Run 3D",
+        "image": "https:\/\/lh3.googleusercontent.com\/xyCUIhJN7nZWXg7nNuk7KIB4vBQ93fiPXrYz9NUQq5d46Oddhe0rGeVDEG3bL7iRWw=s128",
+        "author": "3D Fun Games For Free",
+        "rating": 4.3,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=pl.netigen.alarmclock.unicorn",
+        "id": "pl.netigen.alarmclock.unicorn",
+        "title": "Unicorn Alarm Clock",
+        "image": "https:\/\/lh3.googleusercontent.com\/IWjOOVl81ZVjS-kIMzkwRmtlX7xg5qdjfbATRbly0KeMq1ExrKQ4GJTODs_f8dpIRzg=s128",
+        "author": "Netigen Unicorn",
+        "rating": 4.3,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.tinydragonadventuregames.unicorn.craft.pony.game.girls.color.princess.pet.building.minecraft.cube.pixel.fairy.little.block",
+        "id": "com.tinydragonadventuregames.unicorn.craft.pony.game.girls.color.princess.pet.building.minecraft.cube.pixel.fairy.little.block",
+        "title": "Unicorn Girl Craft Exploration: Games For Girls",
+        "image": "https:\/\/lh3.googleusercontent.com\/yXYg8AWyRrQnK_yPZSeYgNV1UzMFYD1ArNlJcWa0m0YG41Z4fuGJyhW2yHthPqtIMG4=s128",
+        "author": "Tiny Dragon Adventure Games: Craft, Sport & RPG",
+        "rating": 4.2,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.mtsfreegames.unicornhorserun",
+        "id": "com.mtsfreegames.unicornhorserun",
+        "title": "Unicorn Runner 2019 - Running Game",
+        "image": "https:\/\/lh3.googleusercontent.com\/N6cHoNkkctnXn7NQj8DAJBChCs6tIKmFaMzu-EuibpX7WSMtoB7wqywLB4oAUgXoaq0=s128",
+        "author": "MTS Free Games",
+        "rating": 4.3,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=keyboard.theme.k820008346",
+        "id": "keyboard.theme.k820008346",
+        "title": "Pink Flower Unicorn Keyboard Theme",
+        "image": "https:\/\/lh3.googleusercontent.com\/QIzD8zKPCyo3Sq2_vrpvp0tlIpBYF85oKPVCsQ0SxA5K-TCGc387mowDoMeKKNO6oaw=s128",
+        "author": "BigWin themes 2018",
+        "rating": 4.7,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.ZagorecLS.swenicack",
+        "id": "com.ZagorecLS.swenicack",
+        "title": "Sweet Unicorn Cake Screen Lock",
+        "image": "https:\/\/lh3.googleusercontent.com\/f4bPPcKWUyZ7yAEtPMmxPDMpzi4Fo7cQGPxfv1DWS8N44xNdQFAl5pKOLa-T0e5eOA=s128",
+        "author": "Zagorecka LiveStyle",
+        "rating": 4.1,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.bros.games.coloring.game.kids.unicorn",
+        "id": "com.bros.games.coloring.game.kids.unicorn",
+        "title": "Unicorn coloring book for kids",
+        "image": "https:\/\/lh3.googleusercontent.com\/p1VPbhbrXXKDdSqn9gb-pkGojJ8r6P_IHRHMtGHf4DxpFgR1HK56ZUXenE-Z5WXBGbSo=s128",
+        "author": "2bros - games for kids",
+        "rating": 4.3,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.mystylinglounge.android_unicornmakeoverartist",
+        "id": "com.mystylinglounge.android_unicornmakeoverartist",
+        "title": "Unicorn Makeover Artist: World Travel",
+        "image": "https:\/\/lh3.googleusercontent.com\/-LdiqbHQRPM7dSO4_BB8rcZ2A3omHANNMjjZ4evwjQ-INc-I-LD5akHzWyhqu-MLEegf=s128",
+        "author": "Salon\u2122",
+        "rating": 4.2,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.tapfree.ultimatedash.unicorn",
+        "id": "com.tapfree.ultimatedash.unicorn",
+        "title": "Ultimate Unicorn Dash 3D",
+        "image": "https:\/\/lh3.googleusercontent.com\/-RIlRhFeCB9NOePwruwzB8NgTQf_fWbdejRQKYS6SEpu8LIKGuR_XxpjeDSzZ4rJEb4=s128",
+        "author": "Tap2Play, LLC (Ticker: TAPM)",
+        "rating": 4.1,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.girl.unicorn",
+        "id": "com.girl.unicorn",
+        "title": "Cute Unicorn Girl Wallpapers - Kawaii backgrounds",
+        "image": "https:\/\/lh3.googleusercontent.com\/5-UbRzP1dDOUS56D9wdH0tPSjuuo_54IJr1MyVlY4DLf1OW53G3Nka8UOEulQ8S7uTc=s128",
+        "author": "Kawaii Apps",
+        "rating": 4.4,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.greenteagames.unicorndash3d",
+        "id": "com.greenteagames.unicorndash3d",
+        "title": "Unicorn Runner 3D - Horse Run",
+        "image": "https:\/\/lh3.googleusercontent.com\/B9xkuHIM0Rl2ingipzY_CDgkBjnkdRfy8pkteE3E8-lw8kWXd37GPbSb4ZHVwxHosg=s128",
+        "author": "Green Tea Games",
+        "rating": 4.6,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.lily.talking.unicorn",
+        "id": "com.lily.talking.unicorn",
+        "title": "Talking Unicorn",
+        "image": "https:\/\/lh3.googleusercontent.com\/8gukXiy2XLDUZMyteRbPHy4pz9M-MFdrVWltSElawCjqHC0XAijqw7H-tMWCxn58qA=s128",
+        "author": "Talking Baby",
+        "rating": 4.5,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.piupiuapps.coloringunicorns",
+        "id": "com.piupiuapps.coloringunicorns",
+        "title": "Unicorn Coloring Book",
+        "image": "https:\/\/lh3.googleusercontent.com\/sR7dBiujPTBTANIFUKMOhqV5wTe2H92kJfuyDsOc5dHs2cgyJAqACOc1q-qeD5Z52w=s128",
+        "author": "Piu Piu Apps",
+        "rating": 4.5,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.kidscrazygames.unicorncake2",
+        "id": "com.kidscrazygames.unicorncake2",
+        "title": "Unicorn Food - Cake Bakery",
+        "image": "https:\/\/lh3.googleusercontent.com\/iSS9UPUS6SS4vcyJQUUOrKzSOWb_su3POtGKkzfdXNwKSRV0mlPF5ZvDC51KfoIF5A=s128",
+        "author": "Kids Crazy Games Media",
+        "rating": 4.4,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.crazycampmedia.android_unicornfoodcupcakedesserts",
+        "id": "com.crazycampmedia.android_unicornfoodcupcakedesserts",
+        "title": "Unicorn Food - Sweet Rainbow Cupcake Desserts",
+        "image": "https:\/\/lh3.googleusercontent.com\/PisMrGoH4hzhl272TuR5J1VuI7Iy3mbuVGcyhVeDWNqYY65gi7gAuSEiJ6zddcaMyXc=s128",
+        "author": "Crazy Camp Media",
+        "rating": 4.3,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=br.com.tapps.unicornevolution",
+        "id": "br.com.tapps.unicornevolution",
+        "title": "Unicorn Evolution - Fairy Tale Horse Game",
+        "image": "https:\/\/lh3.googleusercontent.com\/HfY25IqwhVT5W9n8psTldKflIoTKIS-LSWgrqHa0hFRk7xRaWjyuvY4Sal04VuGHRHE=s128",
+        "author": "Tapps Games",
+        "rating": 4.7,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.unicorn.adventures.world.pony.dash.runner",
+        "id": "com.unicorn.adventures.world.pony.dash.runner",
+        "title": "Unicorn Adventures World | Miraculous Unicorn Game",
+        "image": "https:\/\/lh3.googleusercontent.com\/Buoq5xnSoZB_kPo9x22WmAFDXlwGDNAcyRRYmgro6OE0zHY5tFNNS3aDeW4se3BCV0A=s128",
+        "author": "Worify",
+        "rating": 4.3,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=pl.netigen.pianounicorn",
+        "id": "pl.netigen.pianounicorn",
+        "title": "Unicorn Piano",
+        "image": "https:\/\/lh3.googleusercontent.com\/J3k8zKefo8yEfYmEr6nDYjtSptfmdbhGPUh1Y6SORqvj9DhmldgCbhNq_f7QVoyLQA=s128",
+        "author": "Netigen Unicorn",
+        "rating": 4.4,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.sky.wallk",
+        "id": "com.sky.wallk",
+        "title": "Kawaii Unicorn wallpapers\u00a0cute background",
+        "image": "https:\/\/lh3.googleusercontent.com\/-CkkINEIgfJ1OAVuWOs_d_NOD9_YEcHsVXD951rfAZU-9hy5WStSz-veAXqhz5hbtgJ0=s128",
+        "author": "Kawaii Apps",
+        "rating": 4.5,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.beautygirlsinc.android_rainbowunicornnail",
+        "id": "com.beautygirlsinc.android_rainbowunicornnail",
+        "title": "Rainbow Unicorn Nail Beauty Artist Salon",
+        "image": "https:\/\/lh3.googleusercontent.com\/h2lpYFIPSYAyFDnUUfO46Tzd_m_D_QV7AqjtcV92wG35hkhVHMmWXHlLEKFZCOD1lw=s128",
+        "author": "Beauty Girls",
+        "rating": 4,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=air.com.winkypinky.newbornunicornwelcomeparty",
+        "id": "air.com.winkypinky.newbornunicornwelcomeparty",
+        "title": "Newborn Unicorn Welcome Party",
+        "image": "https:\/\/lh3.googleusercontent.com\/fgTVqC-GEJH-KKl9WhBrQDlhunPj_BV5W-Hpp69WZdLlgMyf-7HCt6u7gyRoRVKGfw=s128",
+        "author": "winkypinky",
+        "rating": 4.5,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.thalia.pink.unicorn.theme.launcher",
+        "id": "com.thalia.pink.unicorn.theme.launcher",
+        "title": "Pink Unicorn Theme Launcher",
+        "image": "https:\/\/lh3.googleusercontent.com\/Jz9ukzqEB_TgYhzjLL3XwXb5GLDqfQ31vcT2EiNNuD9ROd19K5sAv-DscVpsHKOURI8=s128",
+        "author": "Thalia Spiele und Anwendungen",
+        "rating": 4.1,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=eu.aagames.unicornpet",
+        "id": "eu.aagames.unicornpet",
+        "title": "Unicorn Pet",
+        "image": "https:\/\/lh3.ggpht.com\/c6iKEyzSrJ1wmQ_0r4Nqbt_Fmpn9OHruIYALvIgo74HaRTGK2WPNuG_q4pTdke82TdAP=s128",
+        "author": "A&A Games",
+        "rating": 4.1,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=com.unicornwallpaper.unicornpictures.cute.horn.art.flying.baby.hd.beautiful.funny.pink.purple.real.cartoon",
+        "id": "com.unicornwallpaper.unicornpictures.cute.horn.art.flying.baby.hd.beautiful.funny.pink.purple.real.cartoon",
+        "title": "Unicorn Wallpapers",
+        "image": "https:\/\/lh3.googleusercontent.com\/L11Ut7VxuBODlZM2fa1nM2sVFh3ybb9DFua14CFsR2HWwM5UhMpEAYeWUPhYjxGCYcBT=s128",
+        "author": "GoaliSoft",
+        "rating": 4.6,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=pl.netigen.unicorn",
+        "id": "pl.netigen.unicorn",
+        "title": "Unicorn Runner",
+        "image": "https:\/\/lh3.googleusercontent.com\/QawTV6wk082uWjaluZPRQ3Nuk79pyXOt1ytAbG2zSYOqdYFLHqPNVFdeTW4S0yVfig=s128",
+        "author": "Netigen Unicorn",
+        "rating": 4.7,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=pl.netigen.photoeditor.unicorn",
+        "id": "pl.netigen.photoeditor.unicorn",
+        "title": "Unicorn Photo Editor",
+        "image": "https:\/\/lh3.googleusercontent.com\/xVimpGWDl9Vg9xWJvd1ILI0_hHKnp5kCLNjb86Ta6TSlaYsLNQuldKSx0ZxX_Wh22wU=s128",
+        "author": "Netigen Unicorn",
+        "rating": 4.4,
+        "price": null
+    },
+    {
+        "url": "https:\/\/play.google.com\/store\/apps\/details?id=io.evolutiongames.unicornevolution",
+        "id": "io.evolutiongames.unicornevolution",
+        "title": "Unicorn Evolution - Idle Cute Clicker Game Kawaii",
+        "image": "https:\/\/lh3.googleusercontent.com\/nmZeTpDpTGZkJEX-laXJkb20z-OJ-_PDxOkynMJRtXx0PAhV7gcEfsrNE0c8JX8fwA=s128",
+        "author": "Evolution Games GmbH",
+        "rating": 4.7,
         "price": null
     }
 ]

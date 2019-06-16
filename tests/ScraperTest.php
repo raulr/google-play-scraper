@@ -115,22 +115,6 @@ class ScraperTest extends \PHPUnit_Framework_TestCase
         $app = $scraper->getApp('non.existing.app');
     }
 
-    public function testGetAppWithNullByte()
-    {
-        $transactions = array();
-        $history = Middleware::history($transactions);
-        $mock = new MockHandler(array(
-            new Response(200, array('content-type' => 'text/html; charset=utf-8'), file_get_contents(__DIR__.'/resources/app3.html')),
-        ));
-        $handler = HandlerStack::create($mock);
-        $handler->push($history);
-        $scraper = $this->getScraper($handler);
-        $app = $scraper->getApp('org.zooper.zwpro', 'de', 'de');
-        $expected = json_decode(file_get_contents(__DIR__.'/resources/app3.json'), true);
-        $this->assertEquals($expected, $app);
-        $this->assertEquals('https://play.google.com/store/apps/details?id=org.zooper.zwpro&hl=de&gl=de', $transactions[0]['request']->getUri());
-    }
-
     public function testGetApps()
     {
         $scraper = $this->getScraper();
@@ -180,7 +164,7 @@ class ScraperTest extends \PHPUnit_Framework_TestCase
     {
         $scraper = $this->getScraper();
         $this->setExpectedException('RangeException');
-        $scraper->getListChunk('topselling_paid', 'GAME_ARCADE', 501);
+        $scraper->getListChunk('topselling_paid', 'GAME_ARCADE', 181);
     }
 
     public function testGetListChunkNumNotInt()
@@ -265,8 +249,7 @@ class ScraperTest extends \PHPUnit_Framework_TestCase
         $transactions = array();
         $history = Middleware::history($transactions);
         $mock = new MockHandler(array(
-            new Response(200, array('content-type' => 'text/html; charset=utf-8'), file_get_contents(__DIR__.'/resources/search1.html')),
-            new Response(200, array('content-type' => 'text/html; charset=utf-8'), file_get_contents(__DIR__.'/resources/search2.html')),
+            new Response(200, array('content-type' => 'text/html; charset=utf-8'), file_get_contents(__DIR__.'/resources/search.html')),
         ));
         $handler = HandlerStack::create($mock);
         $handler->push($history);
@@ -275,7 +258,6 @@ class ScraperTest extends \PHPUnit_Framework_TestCase
         $expected = json_decode(file_get_contents(__DIR__.'/resources/search.json'), true);
         $this->assertEquals($expected, $search);
         $this->assertEquals('https://play.google.com/store/search?q=unicorns&c=apps&hl=en&gl=us&price=1&rating=1', $transactions[0]['request']->getUri());
-        $this->assertEquals('https://play.google.com/store/search?q=unicorns&c=apps&hl=en&gl=us&price=1&rating=1&pagTok=GAEiAggU%3AS%3AANO1ljLtUJw', $transactions[1]['request']->getUri());
     }
 
     public function testGetSearchQueryNotString()
