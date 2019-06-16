@@ -53,37 +53,35 @@ Returns:
 array (
   'id' => 'com.mojang.minecraftpe',
   'url' => 'https://play.google.com/store/apps/details?id=com.mojang.minecraftpe',
-  'image' => 'https://lh3.googleusercontent.com/30koN0eGl-LHqvUZrCj9HT4qVPQdvN508p2wuhaWUnqKeCp6nrs9QW8v6IVGvGNauA=w300',
-  'title' => 'Minecraft: Pocket Edition',
+  'image' => 'https://lh3.googleusercontent.com/VSwHQjcAttxsLE47RuS4PqpC4LT7lCoSjE7Hx5AW_yCxtDvcnsHHvm5CTuL5BPN-uRTP=s180',
+  'title' => 'Minecraft',
   'author' => 'Mojang',
   'author_link' => 'https://play.google.com/store/apps/developer?id=Mojang',
   'categories' => array (
     'Arcade',
-    'Creativity',
+    'Action & Adventure',
   ),
   'price' => '$6.99',
   'screenshots' => array (
-    'https://lh3.googleusercontent.com/VkLE0e0EDuRID6jdTE97cC8BomcDReJtZOem9Jlb14jw9O7ytAGvE-2pLqvoSJ7w3IdK=h310',
-    'https://lh3.googleusercontent.com/28b1vxJQe916wOaSVB4CmcnDujk8M2SNaCwqtQ4cUS0wYKYn9kCYeqxX0uyI2X-nQv0=h310',
+    'https://lh3.googleusercontent.com/28b1vxJQe916wOaSVB4CmcnDujk8M2SNaCwqtQ4cUS0wYKYn9kCYeqxX0uyI2X-nQv0=w720-h310',
+    'https://lh3.googleusercontent.com/VkLE0e0EDuRID6jdTE97cC8BomcDReJtZOem9Jlb14jw9O7ytAGvE-2pLqvoSJ7w3IdK=w720-h310',
     // [...]
   ),
-  'description' => 'Our latest free update includes the Nether and all its inhabitants[...]',
-  'description_html' => 'Our latest free update includes the Nether and all its inhabitants[...]',
-  'rating' => 4.4726405143737793,
-  'votes' => 1136962,
-  'last_updated' => 'October 22, 2015',
-  'size' => 'Varies with device',
-  'downloads' => '10,000,000 - 50,000,000',
-  'version' => 'Varies with device',
-  'supported_os' => 'Varies with device',
+  'description' => 'Explore infinite worlds and build everything from the simplest of homes to the grandest of castles[...]',
+  'description_html' => 'Explore infinite worlds and build everything from the simplest of homes to the grandest of castles[...]',
+  'rating' => 4.5,
+  'votes' => 2736136,
+  'last_updated' => 'May 23, 2019',
+  'size' => null,
+  'downloads' => '10,000,000+',
+  'version' => '1.11.4.2',
+  'supported_os' => '4.2 and up',
   'content_rating' => 'Everyone 10+',
-  'whatsnew' => 'Build, explore and survive on the go with Minecraft: Pocket Edition[...]',
-  'video_link' => 'https://www.youtube.com/embed/D2Z9oKTzzrM?ps=play&vq=large&rel=0&autohide=1&showinfo=0&autoplay=1',
-  'video_image' => 'https://i.ytimg.com/vi/D2Z9oKTzzrM/hqdefault.jpg',
+  'whatsnew' => 'What\'s new in version 1.11?[...]',
 )
 ```
 
-The following fields may contain a `null` value: `price`, `size`, `downloads`, `version`, `whatsnew`, `video_link` and `video_image`. The `price` being `null` means the app is free.
+The following fields may contain a `null` value: `price`, `last_updated`, `size`, `downloads`, `version`, `supported_os`, `content_rating`, `whatsnew`, `video_link` and `video_image`. The `price` being `null` means the app is free.
 
 ### getApps
 
@@ -120,21 +118,28 @@ Returns:
 
 ```php
 array (
+  'ART_AND_DESIGN',
+  'AUTO_AND_VEHICLES',
+  'BEAUTY',
   'BOOKS_AND_REFERENCE',
   'BUSINESS',
   'COMICS',
   'COMMUNICATION',
+  'DATING',
   'EDUCATION',
   'ENTERTAINMENT',
+  'EVENTS',
   'FINANCE',
+  'FOOD_AND_DRINK',
   'HEALTH_AND_FITNESS',
+  'HOUSE_AND_HOME',
   'LIBRARIES_AND_DEMO',
   'LIFESTYLE',
-  'APP_WALLPAPER',
-  'MEDIA_AND_VIDEO',
+  'MAPS_AND_NAVIGATION',
   'MEDICAL',
   'MUSIC_AND_AUDIO',
   'NEWS_AND_MAGAZINES',
+  'PARENTING',
   'PERSONALIZATION',
   'PHOTOGRAPHY',
   'PRODUCTIVITY',
@@ -142,10 +147,11 @@ array (
   'SOCIAL',
   'SPORTS',
   'TOOLS',
-  'TRANSPORTATION',
   'TRAVEL_AND_LOCAL',
+  'VIDEO_PLAYERS',
+  'ANDROID_WEAR',
   'WEATHER',
-  'APP_WIDGETS',
+  'GAME',
   'GAME_ACTION',
   'GAME_ADVENTURE',
   'GAME_ARCADE',
@@ -169,7 +175,7 @@ array (
   'FAMILY_CREATE',
   'FAMILY_EDUCATION',
   'FAMILY_MUSICVIDEO',
-  'FAMILY_PRETEND',
+  'FAMILY_PRETEND'
 )
 ```
 
@@ -250,7 +256,7 @@ Retrieves a chunk of a Google Play app list.
 
 * `$collection`: Google Play collection to retrieve. See [getCollections](#getcollections) for possible values.
 * `$category`: (optional, defaults to `null`) Filter request by this category. See [getCategories](#getcategories) for possible values.
-* `$start`: (optional, defaults to `0`): Starting index. Must be a value between `0` and `500`.
+* `$start`: (optional, defaults to `0`): Starting index. Must be a value between `0` and `180`.
 * `$num`: (optional, defaults to `60`): Amount of apps to retrieve. Must be a value between `0` and `120`.
 * `$lang`: (optional, defaults to `null`): Overrides the default language.
 * `$country`: (optional, defaults to `null`): Overrides the default country.
