@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.3.0 (2019-06-16)
+
+### Changed
+
+* Update scraping to the current markup in Play Store website.
+
 ## 0.2.0 (2016-11-10)
 
 ### Added
