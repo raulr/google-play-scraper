@@ -220,8 +220,8 @@ class Scraper
         if (!is_int($start)) {
             throw new \InvalidArgumentException('"start" must be an integer');
         }
-        if ($start < 0 || $start > 500) {
-            throw new \RangeException('"start" must be a number between 0 and 500');
+        if ($start < 0 || $start > 180) {
+            throw new \RangeException('"start" must be a number between 0 and 180');
         }
         if (!is_int($num)) {
             throw new \InvalidArgumentException('"num" must be an integer');
@@ -259,7 +259,7 @@ class Scraper
             $appsChunk = $this->getListChunk($collection, $category, $start, $num, $lang, $country);
             $apps = array_merge($apps, $appsChunk);
             $start += $num;
-        } while (count($appsChunk) == $num && $start <= 500);
+        } while (count($appsChunk) == $num && $start <= 180);
 
         return $apps;
     }
