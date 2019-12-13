@@ -130,6 +130,9 @@ class Scraper
             'whatsnew' => null,
             'video_link' => null,
             'video_image' => null,
+            'author_website' => null,
+            'author_email' => null,
+            'privacy_policy_link' => null
         );
 
         $info['id'] = $id;
@@ -184,6 +187,19 @@ class Scraper
                 $info['supported_os'] = $nodeText;
             } elseif (is_null($info['content_rating']) && $node->filter('div > .htlgb > div')->count()) {
                 $info['content_rating'] = $node->filter('div > .htlgb > div')->first()->text();
+            }
+        });
+        $developerInfoNodes = $crawler->filter('.hAyfc > .htlgb > .IQ1z0d > .htlgb > div > .hrTbp');
+        $developerInfoNodes->each(function ($node) use (&$info) {
+            $nodeText = $node->text();
+            $nodeText = str_replace("\xc2\xa0", ' ', $nodeText); // convert non breaking to normal space
+
+            if ($nodeText === 'Visit website') {
+                $info['author_website'] = $node->attr('href');
+            } elseif ($nodeText === 'Privacy Policy') {
+                $info['privacy_policy_link'] = $node->attr('href');
+            } elseif (strpos($nodeText, '@')) {
+                $info['author_email'] = $nodeText;
             }
         });
         $whatsnewNode = $crawler->filter('[itemprop="description"] > span')->eq(1);
