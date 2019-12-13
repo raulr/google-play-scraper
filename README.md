@@ -78,6 +78,9 @@ array (
   'supported_os' => '4.2 and up',
   'content_rating' => 'Everyone 10+',
   'whatsnew' => 'What\'s new in version 1.11?[...]',
+  'author_website' => 'http:\/\/help.mojang.com',
+  'author_email' => 'android-help@mojang.com',
+  'privacy_policy_link' => 'https:\/\/privacy.microsoft.com\/en-us\/privacystatement'
 )
 ```
 
