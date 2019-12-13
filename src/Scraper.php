@@ -365,7 +365,8 @@ class Scraper
             $url .= '?'.$query;
         }
         $crawler = $this->client->request('GET', $url);
-        $status_code = $this->client->getResponse()->getStatus();
+        $response = $this->client->getResponse();
+        $status_code = method_exists($response, 'getStatusCode') ? $response->getStatusCode() : $response->getStatus();
         if ($status_code == 404) {
             throw new NotFoundException('Requested resource not found');
         } elseif ($status_code != 200) {
