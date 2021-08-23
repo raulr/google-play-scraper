@@ -12,7 +12,7 @@ class Client extends BaseClient
         $content = str_replace(chr(0), '', $response->getContent());
         $newResponse = new Response(
             $content,
-            $response->getStatus(),
+            $response->getStatusCode(),
             $response->getHeaders()
         );
 
