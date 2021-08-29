@@ -6,7 +6,7 @@
     "homepage": "https://github.com/raulr/google-play-scraper",
     "license": "MIT",
     "require": {
-        "fabpot/goutte": "^3.0"
+        "fabpot/goutte": "^4.0"
     },
     "authors": [
         {
